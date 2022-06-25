@@ -1,0 +1,136 @@
+body {
+  overflow-x: hidden;
+}
+
+nav {
+  height: 30px;
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  position: fixed;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+/*Styling logo*/
+.logo {
+  width: 15%;
+  padding: 5px;
+  text-align: center;
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+/*Styling Links*/
+.nav-links {
+  display: flex;
+  list-style: none;
+  width: 80%;
+  padding-right: 10%;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  margin: 0 0.7vw;
+  font-size: 12px;
+}
+.nav-links li {
+  position: relative;
+}
+.nav-links li a:hover {
+  font-weight: 500;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div {
+  width: 30px;
+  height: 1px;
+  background: black;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+.hamburger {
+  display: none;
+}
+
+/*Styling Shopping Cart*/
+.shopping-cart {
+  padding: 3px;
+}
+
+/* Styling Search Bar */
+.search-bar {
+  padding: 3px;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px) {
+  .logo {
+    width: 20%;
+  }
+  nav {
+    position: fixed;
+    z-index: 3;
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+    transition: all 0.7s ease;
+  }
+  .nav-links {
+    position: fixed;
+    background: white;
+    margin-top: 30px;
+    height: 100px;
+    width: 100%;
+    flex-direction: column;
+    clip-path: inset(0px 0px 500px 0px);
+    -webkit-clip-path: inset(0px 0px 500px 0px);
+    transition: all 0.5s ease-out;
+    pointer-events: none;
+  }
+  .nav-links.open {
+    clip-path: inset(-40px 0px);
+    -webkit-clip-path: inset(-40px 0px);
+    pointer-events: all;
+  }
+  .shopping-cart {
+    position: absolute;
+    right: 11%;
+  }
+  .search-bar {
+    position: absolute;
+    right: 20%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .shopping-cart {
+    position: absolute;
+    right: 15%;
+  }
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-8px, 0px);
+}
+.toggle .line2 {
+  transform: rotate(45deg) translate(-3px, 4px);
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-8px, -0px);
+}
