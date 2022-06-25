@@ -38,8 +38,12 @@
   padding-top: 10px;
 }
 
-.add-to-cart-catalog {
-  align-items: center;
+.home-description {
+  margin: 20px 0px 0px 40px;
+}
+
+.home-company-name {
+  margin: 0px 0px 20px 40px;
 }
 
 @keyframes App-logo-spin {
