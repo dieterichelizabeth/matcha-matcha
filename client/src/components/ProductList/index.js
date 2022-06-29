@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Card, Row, Col, Button } from "antd";
 
 const ProductList = () => {
@@ -62,7 +63,9 @@ const ProductList = () => {
               />
             }
           >
-            <Meta title={item.name} description={item.description} />
+            <Link to={`/products/4567`}>
+              <Meta title={item.name} description={item.description} />
+            </Link>
             <div className="additional">
               <p className="price">{item.price}</p>
               <Button type="text" key={item._id}>
