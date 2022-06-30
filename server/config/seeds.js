@@ -22,7 +22,7 @@ db.once("open", async () => {
         "Revitalizing Serum is an advanced formula that works to calm irritated skin while restoring it to its natural state. The result is smoother, softer skin that looks more radiant than ever before.",
       image:
         "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHNraW5jYXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      category: "Face",
+      category: categories[0]._id,
       price: 22.99,
       quantity: 500,
       ingredients:
@@ -36,7 +36,7 @@ db.once("open", async () => {
         "Healing Spot Treatment is an effective acne treatment cream formulated with natural ingredients such as tea tree oil, witch hazel, aloe vera, calendula, vitamin E, and more. The formula helps to reduce redness, inflammation, and irritation while providing long lasting results.",
       image:
         "https://images.unsplash.com/photo-1624095149305-70e17ef7adae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTZ8fHNraW5jYXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      category: "Face",
+      category: categories[0]._id,
       price: 42.99,
       quantity: 225,
       ingredients:
@@ -50,7 +50,7 @@ db.once("open", async () => {
         "This eye care set includes two products. The first product contains an age-defying blend of antioxidants and vitamins that helps protect the skin around the eyes from free radical damage. The second product uses retinol to help improve the appearance of fine lines and wrinkles.",
       image:
         "https://images.unsplash.com/photo-1613803745799-ba6c10aace85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHNraW5jYXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      category: "Face",
+      category: categories[0]._id,
       price: 21.49,
       quantity: 700,
       ingredients:
@@ -64,7 +64,7 @@ db.once("open", async () => {
         "Moisturize your lips with this lightweight and long lasting lip balm. This product contains natural ingredients like bees wax, shea butter, jojoba oil, vitamin E and aloe vera. The formula is infused with Vitamin B5 which helps maintain healthy skin.",
       image:
         "https://images.unsplash.com/photo-1599305090598-fe179d501227?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzd8fHNraW5jYXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      category: "Face",
+      category: categories[0]._id,
       price: 5.99,
       quantity: 300,
       ingredients:
@@ -78,7 +78,7 @@ db.once("open", async () => {
         "Radiant Repair Serum is an intensive treatment formulated specifically for aging skin. This serum contains powerful antioxidants and peptides which work together to improve the skin's overall appearance and texture.",
       image:
         "https://images.unsplash.com/photo-1576426863848-c21f53c60b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHNraW5jYXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
-      category: "Face",
+      category: categories[0]._id,
       price: 55.49,
       quantity: 200,
       ingredients:
@@ -92,7 +92,7 @@ db.once("open", async () => {
         "Matcha Moisture Serums are formulated with an exclusive blend of organic matcha green tea extract, aloe vera leaf juice, and vitamin B5. The result? A powerful formula that helps your skin retain its youthful glow while reducing signs of aging.",
       image:
         "https://images.unsplash.com/photo-1638609269267-f0128098a809?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fHNraW5jYXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      category: "Face",
+      category: categories[0]._id,
       price: 45.99,
       quantity: 100,
       ingredients:
@@ -106,7 +106,7 @@ db.once("open", async () => {
         "So Soft Body Milk is an enriched lotion made with plant-based milks, vitamins, and minerals. It has been specially formulated to be gentle on your skin while still delivering essential nutrients.",
       image:
         "https://images.unsplash.com/photo-1601049541079-473f79fd3746?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGxvdGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
-      category: "Face",
+      category: categories[0]._id,
       price: 27.49,
       quantity: 200,
       ingredients:
@@ -120,7 +120,7 @@ db.once("open", async () => {
         "This serum helps reduce dark spots and uneven skin tone while improving your complexion overall. The formula contains an exclusive blend of powerful antioxidants and vitamin A to protect against free radical damage and improve the appearance of fine lines and wrinkles",
       image:
         "https://images.unsplash.com/photo-1537251503603-4bd46030115f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTg1fHxza2luY2FyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
-      category: "Face",
+      category: categories[0]._id,
       price: 32.95,
       quantity: 100,
       ingredients:
@@ -134,7 +134,7 @@ db.once("open", async () => {
         "This lotion will leave your skin feeling smooth and moisturized without leaving behind any greasy residue. This lotion can be used as a daily moisturizer or as a treatment after swimming or showering. The lotion is water resistant up to 50 meters and has a non-greasy formula.",
       image:
         "https://images.unsplash.com/photo-1638609927043-3eed02fdd24b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODF8fHNraW5jYXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      category: "Body",
+      category: categories[2]._id,
       price: 18.99,
       quantity: 300,
       ingredients:
@@ -148,7 +148,7 @@ db.once("open", async () => {
         "This luxurious body lotion has been formulated with skin-loving ingredients like aloe vera, shea butter, and vitamin E to leave your skin feeling smooth and moisturized. The botanicals in this lotion are known to reduce redness, calm irritation, and protect against free radicals.",
       image:
         "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHNraW5jYXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
-      category: "Body",
+      category: categories[2]._id,
       price: 35.99,
       quantity: 450,
       ingredients:
@@ -162,7 +162,7 @@ db.once("open", async () => {
         "Lotus Bar Soap is a natural soap made with 100% pure coconut oil and palm oil. A gentle yet effective cleanser that leaves skin feeling clean, smooth and moisturized. This bar soap has been formulated without any harsh chemicals or synthetic fragrances.",
       image:
         "https://images.unsplash.com/photo-1614806687007-2215a9db3b1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTR8fHNraW5jYXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      category: "Body",
+      category: categories[2]._id,
       price: 23.49,
       quantity: 100,
       ingredients:
@@ -176,7 +176,7 @@ db.once("open", async () => {
         " The rose bar soap has been formulated to be gentle enough for daily use but powerful enough to clean your skin without stripping it of its natural oils. Rose Bar Soap is perfect for those who want to nourish their skin while they wash.",
       image:
         "https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8aGFuZCUyMHNvYXB8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
-      category: "Body",
+      category: categories[2]._id,
       price: 23.49,
       quantity: 30,
       ingredients:
@@ -191,7 +191,7 @@ db.once("open", async () => {
         "Lotus hand soap is an extra strength, exfoliative soap made with natural minerals that are essential for healthy skin. The result? A luxurious lather that leaves your hands feeling clean without drying them out.",
       image:
         "https://images.unsplash.com/photo-1614806687667-83517ca105b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fGhhbmQlMjBzb2FwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      category: "Hands",
+      category: categories[1]._id,
       price: 23.49,
       quantity: 300,
       ingredients:
@@ -205,7 +205,7 @@ db.once("open", async () => {
         "Intensive Repair Cream is an advanced moisturizing treatment formulated with a unique blend of natural ingredients to deeply nourish skin while helping it repair itself. This cream is ideal for those who want to improve their skin’s appearance or treat minor skin conditions such as eczema, psoriasis, and more.",
       image:
         "https://images.unsplash.com/photo-1609097164502-59a1f0f9a66f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTY2fHxza2luY2FyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
-      category: "Hands",
+      category: categories[1]._id,
       price: 45.99,
       quantity: 70,
       ingredients:
@@ -219,7 +219,7 @@ db.once("open", async () => {
         "This hand soap has been formulated with natural ingredients such as coffee extracts, avacodo oil, and almond oil. The result? A gentle and soothing soap that leaves your hands feeling clean and refreshed.",
       image:
         "https://images.unsplash.com/photo-1605264964528-06403738d6dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGhhbmQlMjBzb2FwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      category: "Hands",
+      category: categories[1]._id,
       price: 23.49,
       quantity: 20,
       ingredients:
@@ -233,7 +233,7 @@ db.once("open", async () => {
         "Tea Hand Soap is an organic hand soap made from 100% natural ingredients including tea green tea, lavender, lemon balm and more. A gentle yet effective cleanser that leaves your hands feeling fresh and clean.",
       image:
         "https://images.unsplash.com/photo-1564077454884-6ec0daa6acc3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
-      category: "Hands",
+      category: categories[1]._id,
       price: 25.99,
       quantity: 40,
       ingredients:
@@ -247,7 +247,7 @@ db.once("open", async () => {
         "Lemon Matcha is a unique blend of lemon juice and matcha green tea powder. The result? A refreshing beverage that tastes like nothing else!",
       image:
         "https://images.unsplash.com/photo-1606937898591-f862035e45f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG1hdGNoYSUyMGRyaW5rfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      category: "Tea",
+      category: categories[3]._id,
       price: 7.99,
       quantity: 30,
       ingredients: "Matcha, Lemon",
@@ -260,7 +260,7 @@ db.once("open", async () => {
         "Honey Matcha is an organic matcha green tea drink made with real honey and natural flavors. A delicious beverage that provides many health benefits.",
       image:
         "https://images.unsplash.com/photo-1606937529099-0777d1e25994?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fG1hdGNoYSUyMGRyaW5rfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      category: "Tea",
+      category: categories[3]._id,
       price: 7.99,
       quantity: 30,
       ingredients: "Matcha, Honey, Almond Milk",
@@ -274,7 +274,7 @@ db.once("open", async () => {
 
       image:
         "https://images.unsplash.com/photo-1630551359036-c41b1e34b7a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTV8fG1hdGNoYSUyMGRyaW5rfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      category: "Tea",
+      category: categories[3]._id,
       price: 35.99,
       quantity: 20,
       ingredients: "Matcha",
@@ -288,7 +288,7 @@ db.once("open", async () => {
 
       image:
         "https://images.unsplash.com/photo-1630343254135-7947e2a0e038?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80",
-      category: "Tea",
+      category: categories[3]._id,
       price: 55.99,
       quantity: 300,
       ingredients: "Matcha",
