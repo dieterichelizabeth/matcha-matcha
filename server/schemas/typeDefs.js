@@ -35,6 +35,16 @@ const typeDefs = gql`
     product(_id: ID!): Product
     user: User
   }
+
+  type Mutation {
+    addUser(
+      firstName: String!
+      lastName: String!
+      email: String!
+      password: String!
+    ): Auth
+    login(email: String!, password: String!): Auth
+  }
 `;
 
 module.exports = typeDefs;
