@@ -4,17 +4,18 @@ import Breadcrumb from "../components/Breadcrumb";
 
 const Detail = () => {
   const product = {
-    name: "Age-defying Eye Cream",
+    name: "Tea Hand Soap",
     description:
-      "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+      "Tea Hand Soap is an organic hand soap made from 100% natural ingredients including tea green tea, lavender, lemon balm and more. A gentle yet effective cleanser that leaves your hands feeling fresh and clean.",
     image:
-      "https://images.unsplash.com/photo-1613803745799-ba6c10aace85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHNraW5jYXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
-    category: "Face",
+      "https://images.unsplash.com/photo-1564077454884-6ec0daa6acc3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+    category: "Hand",
+    price: 25.99,
+    quantity: 40,
     ingredients:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi istaprobare, quae sunt a te dicta? Refert tamen, quo modo.",
-    benefits: " Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    price: 22.99,
-    quantity: 700,
+      "Sodium Hyaluronate, Green Tea, Avocado Oil, Lavendar Oil, Charcoal, Amino Acids, Vitamin K, Zinc, Amoxicillin, Niacinamide, Alpha Hydroxy Acid, Sulfur, Soybean Oil, Volcanic Ash, Glycolic acid, Ceramides, Seaweed, Vitamin A, Lemon Balm, Vitamin F, Vitamin B3",
+    benefits:
+      "Gentle enough for daily use. Leaves skin feeling clean and refreshed. Non-toxic. Scented with essential oils. Made in USA.",
   };
 
   return (

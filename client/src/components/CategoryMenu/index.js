@@ -6,7 +6,7 @@ function CategoryMenu() {
     { name: "Face" },
     { name: "Hands" },
     { name: "Body" },
-    { name: "Candles" },
+    { name: "Drinks" },
   ];
 
   return (
