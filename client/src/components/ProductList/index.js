@@ -1,10 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Card, Row, Col, Button } from "antd";
 
 const ProductList = () => {
-  const { Meta } = Card;
-
   const products = [
     {
       name: "Revitalizing Serum",
@@ -288,33 +285,25 @@ const ProductList = () => {
   ];
 
   return (
-    <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 24 }} justify={"center"}>
+    <div className="product-results-container">
       {products.map((item) => (
-        <Col className="gutter-row" span={5} key={item.name}>
-          <Card
-            hoverable
-            style={{ width: "100%", marginBottom: "20px" }}
-            cover={
-              <img
-                alt="example"
-                src={item.image}
-                style={{ height: "200px", objectFit: "cover" }}
-              />
-            }
-          >
-            <Link to={`/products/4567`}>
-              <Meta title={item.name} description={item.description} />
-            </Link>
-            <div className="additional">
-              <p className="price">{item.price}</p>
-              <Button type="text" key={item._id}>
-                Add to Cart
-              </Button>
+        <div className="product-card" key={item.name}>
+          <Link to={`/products/467`}>
+            <img
+              className="product-image"
+              alt="beuty Product"
+              src={item.image}
+            />
+            <div className="product-card-text">
+              <p className="product-name">{item.name}</p>
+              <p className="product-description">{item.description}</p>
+              <p className="product-price">${item.price}</p>
             </div>
-          </Card>
-        </Col>
+          </Link>
+          <button className="add-to-cart-button">Add to Cart</button>
+        </div>
       ))}
-    </Row>
+    </div>
   );
 };
 

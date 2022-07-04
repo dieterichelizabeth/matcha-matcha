@@ -1,44 +1,57 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { CoffeeOutlined } from "@ant-design/icons";
-import { Menu } from "antd";
-
-const items = [
-  {
-    label: <Link to="/">Matcha Matcha</Link>,
-    key: "home",
-    icon: <CoffeeOutlined />,
-  },
-  {
-    label: <Link to="/catalog">Catalog</Link>,
-    key: "catalog",
-  },
-  {
-    label: <Link to="/signup">Signup</Link>,
-    key: "login",
-  },
-  {
-    label: <Link to="/login">Login</Link>,
-    key: "signup",
-  },
-];
+import "./style.css";
 
 const Nav = () => {
-  const [current, setCurrent] = useState("home");
+  // Hamburger State
+  const [hamburgerState, setHamburgerState] = useState(false);
 
-  const onClick = (e) => {
-    setCurrent(e.key);
+  // Handle Hamburger clicks
+  const handleHamburg = () => {
+    if (hamburgerState === false) {
+      setHamburgerState(true);
+    } else {
+      setHamburgerState(false);
+    }
   };
 
   return (
-    <div>
-      <Menu
-        onClick={onClick}
-        selectedKeys={[current]}
-        mode="horizontal"
-        items={items}
-      />
-    </div>
+    <nav>
+      {/* Company Name or Logo */}
+      <div className="logo">
+        <a href="/">
+          <p>Matcha Skincare</p>
+        </a>
+      </div>
+
+      {/* Hamburger "button" */}
+      <div
+        className={hamburgerState ? "hamburger toggle" : "hamburger"}
+        onClick={handleHamburg}
+      >
+        <div className="line1"></div>
+        <div className="line2"></div>
+        <div className="line3"></div>
+      </div>
+
+      {/* Nav Links */}
+      <ul className={hamburgerState ? "nav-links open" : "nav-links"}>
+        <li className={hamburgerState ? "fadeIn" : ""}>
+          <a href="/catalog">Catalog</a>
+        </li>
+        <li className={hamburgerState ? "fadeIn" : ""}>
+          <a href="/login">Login</a>
+        </li>
+        <li className={hamburgerState ? "fadeIn" : ""}>
+          <a href="/signup">Signup</a>
+        </li>
+      </ul>
+
+      <div className="shopping-cart">
+        <a href="/cart">
+          <span className="material-symbols-outlined">shopping_bag</span>
+        </a>
+      </div>
+    </nav>
   );
 };
 

@@ -1,114 +1,70 @@
-import { Button, Card, Checkbox, Form, Input, AutoComplete } from "antd";
 import React, { useState } from "react";
-const { Option } = AutoComplete;
 
-const App = () => {
-  // Set the State for Autocomplete options
-  const [result, setResult] = useState([]);
+const Login = () => {
+  const [formState, setFormState] = useState({ email: "", password: "" });
 
-  // Handle the autocomplete for "email" in the form
-  const handleSearch = (value) => {
-    let res = [];
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+  };
 
-    if (!value || value.indexOf("@") >= 0) {
-      res = [];
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  function showPassword() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
     } else {
-      res = ["gmail.com", "yahoo.com", "aol.com"].map(
-        (domain) => `${value}@${domain}`
-      );
+      x.type = "password";
     }
-
-    setResult(res);
-  };
-
-  // Alert login successful
-  const onFinish = (values) => {
-    console.log("Success:", values);
-  };
-
-  // Alert login errir
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
-  };
+  }
 
   return (
-    <div className="login-form">
-      <Card style={{ width: "40%" }}>
+    <div className="login-form-container">
+      <div className="login-form">
         <h1>Login</h1>
-        <Form
-          name="basic"
-          labelCol={{
-            span: 4,
-          }}
-          initialValues={{
-            remember: true,
-          }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-          layout="vertical"
-        >
-          {/* Email Field */}
-          <Form.Item
-            label="Email"
-            rules={[
-              {
-                required: true,
-                message: "Please input your email!",
-              },
-            ]}
-          >
-            <AutoComplete
-              onSearch={handleSearch}
-              placeholder="Please enter your email"
-            >
-              {result.map((email) => (
-                <Option key={email} value={email}>
-                  {email}
-                </Option>
-              ))}
-            </AutoComplete>
-          </Form.Item>
-
-          {/* Password Field */}
-          <Form.Item
-            label="Password"
-            rules={[
-              {
-                required: true,
-                message: "Please input your password!",
-              },
-            ]}
-          >
-            <Input.Password placeholder="Please enter your password" />
-          </Form.Item>
-
-          {/* Remember Me Checkbox */}
-          <Form.Item
-            name="remember"
-            valuePropName="checked"
-            wrapperCol={{
-              offset: 9,
-              span: 16,
-            }}
-          >
-            <Checkbox>Remember me</Checkbox>
-          </Form.Item>
-
-          {/* Submit Button */}
-          <Form.Item
-            wrapperCol={{
-              offset: 5,
-              span: 16,
-            }}
-          >
-            <Button type="primary" htmlType="submit" block>
-              Submit
-            </Button>
-          </Form.Item>
-        </Form>
-      </Card>
+        <form name="sign-up" onSubmit={handleFormSubmit}>
+          {/* Email Input */}
+          <label htmlFor="email">Email</label>
+          <br />
+          <input
+            className="form-input-field"
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Please enter your email address"
+            onChange={handleChange}
+          />
+          <br />
+          <label htmlFor="password">Password</label>
+          <br />
+          {/* Password Input */}
+          <input
+            className="form-input-field"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Please create a password"
+            onChange={handleChange}
+          />{" "}
+          <br />
+          <input
+            type="checkbox"
+            id="showPassword"
+            onClick={showPassword}
+          />{" "}
+          Show Password <br />
+          <button className="form-submit-button">Create Account</button>
+        </form>
+      </div>
     </div>
   );
 };
 
-export default App;
+export default Login;

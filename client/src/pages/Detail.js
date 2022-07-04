@@ -1,6 +1,4 @@
 import React from "react";
-import { Button, Divider } from "antd";
-import Breadcrumb from "../components/Breadcrumb";
 
 const Detail = () => {
   const product = {
@@ -18,9 +16,23 @@ const Detail = () => {
       "Gentle enough for daily use. Leaves skin feeling clean and refreshed. Non-toxic. Scented with essential oils. Made in USA.",
   };
 
+  const Breadcrumb = (
+    <div>
+      <ul class="breadcrumb">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/catalog">Catalog</a>
+        </li>
+        <li>{product.name}</li>
+      </ul>
+    </div>
+  );
+
   return (
     <div>
-      <Breadcrumb />
+      {Breadcrumb}
       <div className="details-page">
         {/* Product Image */}
         <div className="detailsImage">
@@ -35,19 +47,21 @@ const Detail = () => {
         <div className="details-description">
           <h2>{product.name}</h2>
           <p>{product.description}</p>
-          <Divider />
+          <hr />
           <p>
             <strong>Ingredients:</strong> {product.ingredients}
           </p>
-          <Divider />
+          <hr />
           <p>
             <strong>Benefits:</strong> {product.benefits}
           </p>
-          <Divider dashed />
-          <p style={{ textAlign: "center" }}>
-            <strong>Price:</strong> ${product.price}
-            <Button style={{ marginLeft: "40px" }}>Add to Cart</Button>
-          </p>
+          <hr />
+          <div className="price-and-button-container">
+            <p>
+              <strong>Price:</strong> ${product.price}
+            </p>
+            <button className="details-add-to-cart">Add to Cart</button>
+          </div>
         </div>
       </div>
     </div>

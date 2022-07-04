@@ -1,47 +1,42 @@
-body {
-  overflow-x: hidden;
-}
-
 nav {
   height: 30px;
   width: 100vw;
-  background-color: white;
   display: flex;
-  position: fixed;
   z-index: 10;
-  margin: 0;
-  padding: 0;
-  color: black;
-  font-family: sans-serif;
-  letter-spacing: 1px;
-  font-weight: 300;
 }
 
 /*Styling logo*/
 .logo {
-  width: 15%;
-  padding: 5px;
+  width: 130px;
+  position: absolute;
+  left: 7px;
   text-align: center;
 }
 
 .logo a {
   text-decoration: none;
+  color: black;
+  font-size: 17px;
 }
 
 /*Styling Links*/
 .nav-links {
   display: flex;
   list-style: none;
+  padding-left: 130px;
   width: 80%;
   padding-right: 10%;
+  padding-top: 7px;
   justify-content: center;
   align-items: center;
+  color: black;
 }
 
 .nav-links li a {
   text-decoration: none;
-  margin: 0 0.7vw;
-  font-size: 12px;
+  margin: 0 30px;
+  font-size: 17px;
+  color: black;
 }
 .nav-links li {
   position: relative;
@@ -64,12 +59,9 @@ nav {
 
 /*Styling Shopping Cart*/
 .shopping-cart {
-  padding: 3px;
-}
-
-/* Styling Search Bar */
-.search-bar {
-  padding: 3px;
+  padding-top: 7px;
+  padding-right: 10px;
+  color: black;
 }
 
 /*Stying for small screens*/
@@ -77,25 +69,23 @@ nav {
   .logo {
     width: 20%;
   }
-  nav {
-    position: fixed;
-    z-index: 3;
-  }
   .hamburger {
     display: block;
     position: absolute;
     cursor: pointer;
     right: 5%;
-    top: 50%;
+    top: 3%;
     transform: translate(-5%, -50%);
     z-index: 2;
     transition: all 0.7s ease;
   }
   .nav-links {
-    position: fixed;
+    position: absolute;
+    padding-left: 0px;
+    margin: 10px 0px;
+    top: 0;
     background: white;
-    margin-top: 30px;
-    height: 100px;
+    height: 120px;
     width: 100%;
     flex-direction: column;
     clip-path: inset(0px 0px 500px 0px);
@@ -103,27 +93,25 @@ nav {
     transition: all 0.5s ease-out;
     pointer-events: none;
   }
+  .nav-links li {
+    padding: 5px 0px;
+  }
+  .nav-links li a {
+    font-size: 15px;
+  }
   .nav-links.open {
     clip-path: inset(-40px 0px);
     -webkit-clip-path: inset(-40px 0px);
     pointer-events: all;
   }
   .shopping-cart {
+    z-index: -1;
     position: absolute;
-    right: 11%;
-  }
-  .search-bar {
-    position: absolute;
-    right: 20%;
+    top: 5px;
+    right: 80px;
   }
 }
 
-@media screen and (max-width: 800px) {
-  .shopping-cart {
-    position: absolute;
-    right: 15%;
-  }
-}
 /*Animating Hamburger Icon on Click*/
 .toggle .line1 {
   transform: rotate(-45deg) translate(-8px, 0px);

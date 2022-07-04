@@ -1,5 +1,4 @@
 import React from "react";
-import { Col, Row, Button } from "antd";
 
 function CategoryMenu() {
   const categories = [
@@ -11,13 +10,13 @@ function CategoryMenu() {
 
   return (
     <div>
-      <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 24 }} justify={"center"}>
+      <div className="category-button-container">
         {categories.map((item) => (
-          <Col span={2} key={item.name}>
-            <Button type="text">{item.name}</Button>
-          </Col>
+          <button className="category-button" key={item.name}>
+            {item.name}
+          </button>
         ))}
-      </Row>
+      </div>
     </div>
   );
 }
