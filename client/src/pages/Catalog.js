@@ -5,7 +5,7 @@ import ProductList from "../components/ProductList";
 const Catalog = () => {
   const Breadcrumb = (
     <div>
-      <ul class="breadcrumb">
+      <ul className="breadcrumb">
         <li>
           <a href="/">Home</a>
         </li>

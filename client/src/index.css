@@ -104,6 +104,10 @@ hr {
   transition: box-shadow 0.3s ease-in-out;
 }
 
+.product-card a {
+  text-decoration: none;
+}
+
 /* https://tobiasahlin.com/blog/how-to-animate-box-shadow/ */
 .product-card:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
