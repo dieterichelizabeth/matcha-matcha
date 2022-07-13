@@ -43,10 +43,10 @@ const ProductList = () => {
         <>
           {filterProducts().map((product) => (
             <div className="product-card" key={product.name}>
-              <Link to={`/products/467`}>
+              <Link to={`/products/${product._id}`}>
                 <img
                   className="product-image"
-                  alt="beuty Product"
+                  alt="Beauty Product"
                   src={product.image}
                 />
                 <div className="product-card-text">

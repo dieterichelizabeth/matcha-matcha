@@ -1,24 +1,22 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Detail = () => {
-  const product = {
-    name: "Tea Hand Soap",
-    description:
-      "Tea Hand Soap is an organic hand soap made from 100% natural ingredients including tea green tea, lavender, lemon balm and more. A gentle yet effective cleanser that leaves your hands feeling fresh and clean.",
-    image:
-      "https://images.unsplash.com/photo-1564077454884-6ec0daa6acc3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
-    category: "Hand",
-    price: 25.99,
-    quantity: 40,
-    ingredients:
-      "Sodium Hyaluronate, Green Tea, Avocado Oil, Lavendar Oil, Charcoal, Amino Acids, Vitamin K, Zinc, Amoxicillin, Niacinamide, Alpha Hydroxy Acid, Sulfur, Soybean Oil, Volcanic Ash, Glycolic acid, Ceramides, Seaweed, Vitamin A, Lemon Balm, Vitamin F, Vitamin B3",
-    benefits:
-      "Gentle enough for daily use. Leaves skin feeling clean and refreshed. Non-toxic. Scented with essential oils. Made in USA.",
-  };
+  // Use the id from the URL
+  const { id } = useParams();
 
+  // Access and use data from the Redux store state.
+  const store = useSelector((state) => state);
+  console.log(store);
+
+  // Find the product details from the Redux Store
+  const product = store.products.find((product) => product._id === id);
+
+  // Breadcrumb
   const Breadcrumb = (
     <div>
-      <ul class="breadcrumb">
+      <ul className="breadcrumb">
         <li>
           <a href="/">Home</a>
         </li>
