@@ -31,6 +31,7 @@ export const QUERY_ALL_PRODUCTS = gql`
       benefits
       category {
         name
+        _id
       }
     }
   }

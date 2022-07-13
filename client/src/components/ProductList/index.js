@@ -11,6 +11,7 @@ const ProductList = () => {
   // Access and use data from the Redux store state.
   const store = useSelector((state) => state);
 
+  // On page load, attempt to gather "products" from the Database
   const { loading, data } = useQuery(QUERY_ALL_PRODUCTS);
 
   // Once the data object is returned from useQuery(), execute the dispatch function.
@@ -21,24 +22,37 @@ const ProductList = () => {
     }
   }, [data, loading, dispatch]);
 
+  // Filter what products display based on what the current Category is.
+  function filterProducts() {
+    // if there is no category selected, return all products
+    if (!store.currentCategory) {
+      return store.products;
+    }
+
+    // if a category is selected, return all products with that category's id
+    return store.products.filter(
+      (product) => product.category._id === store.currentCategory
+    );
+  }
+
   return (
     <div className="product-results-container">
       {/* If there are products in the store, display the product cards. 
-      ELSE IF no product are provided to the store after data is recieved from the database, display this to the user. */}
+          If there are no products in the store after data is recieved from the database, display "no products". */}
       {store.products[0] ? (
         <>
-          {store.products.map((item) => (
-            <div className="product-card" key={item.name}>
+          {filterProducts().map((product) => (
+            <div className="product-card" key={product.name}>
               <Link to={`/products/467`}>
                 <img
                   className="product-image"
                   alt="beuty Product"
-                  src={item.image}
+                  src={product.image}
                 />
                 <div className="product-card-text">
-                  <p className="product-name">{item.name}</p>
-                  <p className="product-description">{item.description}</p>
-                  <p className="product-price">${item.price}</p>
+                  <p className="product-name">{product.name}</p>
+                  <p className="product-description">{product.description}</p>
+                  <p className="product-price">${product.price}</p>
                 </div>
               </Link>
               <button className="add-to-cart-button">Add to Cart</button>

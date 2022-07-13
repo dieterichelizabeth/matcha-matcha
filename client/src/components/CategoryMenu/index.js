@@ -24,15 +24,29 @@ function CategoryMenu() {
     }
   }, [categoryData, loading, dispatch]);
 
+  // When the user selects a category, update the current category in the Redux Store.
+  const handleClick = (id) => {
+    dispatch({
+      type: "updateCurrentCategory",
+      currentCategory: id,
+    });
+  };
+
   return (
     <div>
       <div className="category-button-container">
         {/* If Categories are retrieved from the database, display them to the user */}
         {store.categories ? (
           <>
-            {store.categories.map((item) => (
-              <button className="category-button" key={item.name}>
-                {item.name}
+            {store.categories.map((category) => (
+              <button
+                className="category-button"
+                key={category.name}
+                onClick={() => {
+                  handleClick(category._id);
+                }}
+              >
+                {category.name}
               </button>
             ))}
           </>
