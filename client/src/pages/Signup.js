@@ -1,12 +1,18 @@
 import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../utils/mutations";
+import Auth from "../utils/auth";
 
 const Signup = () => {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [addUser, { error }] = useMutation(ADD_USER);
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    console.log("Success:", formState);
-  };
+  // Form State
+  const [formState, setFormState] = useState({
+    email: "",
+    password: "",
+    firstName: "",
+    lastName: "",
+  });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -14,6 +20,26 @@ const Signup = () => {
       ...formState,
       [name]: value,
     });
+  };
+
+  // On form submit, attempt to create a new user
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const newUserResponse = await addUser({
+        variables: {
+          email: formState.email,
+          password: formState.password,
+          firstName: formState.firstName,
+          lastName: formState.lastName,
+        },
+      });
+      const token = newUserResponse.data.addUser.token;
+      // Login the new user
+      Auth.login(token);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   // https://www.w3schools.com/howto/howto_js_toggle_password.asp
@@ -31,25 +57,25 @@ const Signup = () => {
       <h1>Signup</h1>
       <form name="sign-up" onSubmit={handleFormSubmit}>
         {/* First Name Input */}
-        <label htmlFor="fname">First name</label>
+        <label htmlFor="firstName">First name</label>
         <br />
         <input
           className="form-input-field"
           type="text"
-          id="fname"
-          name="fname"
+          id="firstName"
+          name="firstName"
           placeholder="Please enter your first name"
           onChange={handleChange}
         />
         <br />
         {/* Last Name Input */}
-        <label htmlFor="lname">Last name</label>
+        <label htmlFor="lastName">Last name</label>
         <br />
         <input
           className="form-input-field"
           type="text"
-          id="lname"
-          name="lname"
+          id="lastName"
+          name="lastName"
           placeholder="Please enter your last name"
           onChange={handleChange}
         />
@@ -81,6 +107,13 @@ const Signup = () => {
         <input type="checkbox" onClick={showPassword} /> Show Password <br />
         <button className="form-submit-button">Create Account</button>
       </form>
+      {error ? (
+        <div>
+          <p className="error-text">
+            Something went wrong with creating your account. Please try again.
+          </p>
+        </div>
+      ) : null}
     </div>
   );
 };

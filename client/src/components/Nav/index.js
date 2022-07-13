@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Auth from "../../utils/auth";
 import "./style.css";
 
 const Nav = () => {
@@ -38,12 +39,27 @@ const Nav = () => {
         <li className={hamburgerState ? "fadeIn" : ""}>
           <a href="/catalog">Catalog</a>
         </li>
-        <li className={hamburgerState ? "fadeIn" : ""}>
-          <a href="/login">Login</a>
-        </li>
-        <li className={hamburgerState ? "fadeIn" : ""}>
-          <a href="/signup">Signup</a>
-        </li>
+        {Auth.loggedIn() ? (
+          <>
+            <li className={hamburgerState ? "fadeIn" : ""}>
+              <a href="/orderHistory">Orders</a>
+            </li>
+            <li className={hamburgerState ? "fadeIn" : ""}>
+              <a href="/" onClick={() => Auth.logout()}>
+                Logout
+              </a>
+            </li>
+          </>
+        ) : (
+          <>
+            <li className={hamburgerState ? "fadeIn" : ""}>
+              <a href="/login">Login</a>
+            </li>
+            <li className={hamburgerState ? "fadeIn" : ""}>
+              <a href="/signup">Signup</a>
+            </li>
+          </>
+        )}
       </ul>
 
       <div className="shopping-cart">

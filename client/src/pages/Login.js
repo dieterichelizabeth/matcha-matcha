@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { LOGIN } from "../utils/mutations";
+import Auth from "../utils/auth";
 
 const Login = () => {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [login, { error }] = useMutation(LOGIN);
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    console.log(formState);
-  };
+  // Form State
+  const [formState, setFormState] = useState({ email: "", password: "" });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -14,6 +15,20 @@ const Login = () => {
       ...formState,
       [name]: value,
     });
+  };
+
+  // On form submit, attempt to login the user
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const loginUser = await login({
+        variables: { email: formState.email, password: formState.password },
+      });
+      const token = loginUser.data.login.token;
+      Auth.login(token);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   function showPassword() {
@@ -60,8 +75,16 @@ const Login = () => {
             onClick={showPassword}
           />{" "}
           Show Password <br />
-          <button className="form-submit-button">Create Account</button>
+          <button className="form-submit-button">Login</button>
         </form>
+
+        {error ? (
+          <div>
+            <p className="error-text">
+              Incorrect Login Email or Password. Please try again.
+            </p>
+          </div>
+        ) : null}
       </div>
     </div>
   );
