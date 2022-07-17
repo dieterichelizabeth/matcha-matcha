@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Auth from "../../utils/auth";
 import "./style.css";
+import Cart from "../Cart";
 
 const Nav = () => {
   // Hamburger State
@@ -62,11 +63,7 @@ const Nav = () => {
         )}
       </ul>
 
-      <div className="shopping-cart">
-        <a href="/cart">
-          <span className="material-symbols-outlined">shopping_bag</span>
-        </a>
-      </div>
+      <Cart />
     </nav>
   );
 };
