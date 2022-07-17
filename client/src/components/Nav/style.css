@@ -1,5 +1,5 @@
 nav {
-  height: 30px;
+  height: 40px;
   width: 100vw;
   display: flex;
   z-index: 10;
@@ -57,24 +57,15 @@ nav {
   display: none;
 }
 
-/*Styling Shopping Cart*/
-.shopping-cart {
-  padding-top: 7px;
-  padding-right: 10px;
-  color: black;
-}
-
 /*Stying for small screens*/
 @media screen and (max-width: 800px) {
-  .logo {
-    width: 20%;
-  }
   .hamburger {
     display: block;
     position: absolute;
     cursor: pointer;
-    right: 5%;
-    top: 3%;
+    right: 0;
+    margin-right: 40px;
+    top: 27px;
     transform: translate(-5%, -50%);
     z-index: 2;
     transition: all 0.7s ease;
@@ -103,12 +94,7 @@ nav {
     clip-path: inset(-40px 0px);
     -webkit-clip-path: inset(-40px 0px);
     pointer-events: all;
-  }
-  .shopping-cart {
-    z-index: -1;
-    position: absolute;
-    top: 5px;
-    right: 80px;
+    z-index: 1;
   }
 }
 

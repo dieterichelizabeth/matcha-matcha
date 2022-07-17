@@ -1,0 +1,73 @@
+/*Styling Shopping Cart*/
+.cart {
+  position: absolute;
+  right: 0;
+  margin-right: 15px;
+}
+
+.cart:hover {
+  cursor: pointer;
+}
+
+.shopping-cart-open {
+  z-index: 5;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 2px 1px 5px 0.5px rgba(0, 0, 0, 0.23);
+}
+
+.cart-contents {
+  font-size: 15px;
+}
+
+.cart-open-amount-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 10px;
+}
+
+.cart-open-total {
+  color: rgb(60, 60, 60);
+}
+
+/* Styles to Cart Buttons */
+.shopping-cart-close-button {
+  text-align: right;
+  color: rgb(73, 72, 72);
+}
+
+.shopping-cart-close-button:hover {
+  cursor: pointer;
+}
+
+.view-cart-button {
+  background-color: rgb(189, 187, 187);
+  color: white;
+  font-size: 10px;
+  width: 100%;
+  border: none;
+  padding: 10px;
+}
+
+.view-cart-button:hover {
+  background-color: rgb(158, 157, 157);
+  cursor: pointer;
+}
+
+.checkout-button {
+  background-color: rgb(31, 30, 30);
+  color: white;
+  font-size: 10px;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.checkout-button:hover {
+  background-color: rgb(56, 55, 55);
+  cursor: pointer;
+}
