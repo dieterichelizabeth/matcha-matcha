@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import ProductItem from "../ProductItem";
 import { useQuery } from "@apollo/client";
 import { QUERY_ALL_PRODUCTS } from "../../utils/queries";
 import { useSelector, useDispatch } from "react-redux";
@@ -42,21 +42,14 @@ const ProductList = () => {
       {store.products[0] ? (
         <>
           {filterProducts().map((product) => (
-            <div className="product-card" key={product.name}>
-              <Link to={`/products/${product._id}`}>
-                <img
-                  className="product-image"
-                  alt="Beauty Product"
-                  src={product.image}
-                />
-                <div className="product-card-text">
-                  <p className="product-name">{product.name}</p>
-                  <p className="product-description">{product.description}</p>
-                  <p className="product-price">${product.price}</p>
-                </div>
-              </Link>
-              <button className="add-to-cart-button">Add to Cart</button>
-            </div>
+            <ProductItem
+              key={product._id}
+              _id={product._id}
+              description={product.description}
+              image={product.image}
+              name={product.name}
+              price={product.price}
+            />
           ))}
         </>
       ) : (

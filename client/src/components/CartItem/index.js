@@ -35,9 +35,10 @@ const CartItem = ({ item }) => {
       <img className="cart-item-image" src={item.image} alt={item.name} />
       <div className="cart-item-description">
         <p className="cart-item-name">{item.name}</p>
+
         <div className="cart-item-spacing">
           <p className="cart-item-price">${item.price}</p>
-          <div className="cart-item-spacing">
+          <div className="cart-item-spacing w100">
             <p className="cart-item-price">Qty: </p>
             <input
               className="cart-item-qty-input"
