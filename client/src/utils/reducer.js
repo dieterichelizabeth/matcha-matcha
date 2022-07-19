@@ -22,10 +22,10 @@ export default function reducer(state = initialState, action) {
       return { ...state, cartOpen: !state.cartOpen };
     // Add a product to the car array
     case "addToCart":
-      return { ...state, cart: [...state.cart, ...action.product] };
+      return { ...state, cart: [...state.cart, action.product] };
     // Add multiple products to the cart array
     case "addMultipleToCart":
-      return { ...state, cart: [...state.cart, ...action.products] };
+      return { ...state, cart: [...state.cart, action.products] };
     // Update the quantity of a product in the cart
     case "updateCartQuantity":
       return {
@@ -39,7 +39,7 @@ export default function reducer(state = initialState, action) {
       };
     // Remove a product from the cart array
     case "removeFromCart":
-      let updatedCart = state.cart.fileter((product) => {
+      let updatedCart = state.cart.filter((product) => {
         return product._id !== action._id;
       });
       return { ...state, cart: updatedCart };

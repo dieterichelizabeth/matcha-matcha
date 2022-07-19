@@ -9,7 +9,6 @@ function CategoryMenu() {
 
   // Access and use data from the Redux store state.
   const store = useSelector((state) => state);
-  console.log(store);
 
   // On page load, attempt to gather "category names" from the Database
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);

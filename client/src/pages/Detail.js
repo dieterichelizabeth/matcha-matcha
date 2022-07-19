@@ -1,14 +1,16 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 const Detail = () => {
+  // React-Redux dispatch hook for adding products to the Redux store.
+  const dispatch = useDispatch();
+
   // Use the id from the URL
   const { id } = useParams();
 
   // Access and use data from the Redux store state.
   const store = useSelector((state) => state);
-  console.log(store);
 
   // Find the product details from the Redux Store
   const product = store.products.find((product) => product._id === id);
@@ -27,6 +29,13 @@ const Detail = () => {
       </ul>
     </div>
   );
+
+  const addToCart = () => {
+    dispatch({
+      type: "addToCart",
+      product: { ...product, purchaseQuantity: 1 },
+    });
+  };
 
   return (
     <div>
@@ -58,7 +67,9 @@ const Detail = () => {
             <p>
               <strong>Price:</strong> ${product.price}
             </p>
-            <button className="details-add-to-cart">Add to Cart</button>
+            <button className="details-add-to-cart" onClick={addToCart}>
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
