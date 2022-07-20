@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { addToLocalCart, updateLocalCartQtyPlusOne } from "../../utils/helpers";
 
 const ProductItem = (product) => {
   // React-Redux dispatch hook for adding products to the Redux store.
@@ -8,27 +9,38 @@ const ProductItem = (product) => {
   // Access and use data from the Redux store state.
   const store = useSelector((state) => state);
 
-  const addToCart = () => {
+  async function addToCart() {
     const alreadyInCart = store.cart.find(
       (products) => products._id === product._id
     );
 
-    // If the product is already in the Users cart, increase Purchase Quantity
-    // else, add to cart and alert the user
     if (alreadyInCart) {
+      // If product is already in the store, increase quantity
       dispatch({
         type: "updateCartQuantity",
         _id: product._id,
         purchaseQuantity: parseInt(alreadyInCart.purchaseQuantity) + 1,
       });
+
+      // Open the Cart
+      dispatch({ type: "cartToggleOpen" });
+
+      // Update Local Storage Copy
+      updateLocalCartQtyPlusOne(product);
     } else {
+      // Else, add to store cart
       dispatch({
         type: "addToCart",
         product: { ...product, purchaseQuantity: 1 },
       });
-      alert("Added to Cart!");
+
+      // Open the Cart
+      dispatch({ type: "cartToggleOpen" });
+
+      // Update Local Storage Copy
+      addToLocalCart(product);
     }
-  };
+  }
 
   return (
     <div className="product-card" key={product.name}>

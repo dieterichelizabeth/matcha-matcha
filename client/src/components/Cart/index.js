@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartItem from "../CartItem";
 import "./style.css";
@@ -9,7 +9,23 @@ const Cart = () => {
 
   // Access and use data from the Redux store state.
   const store = useSelector((state) => state);
-  console.log(store);
+
+  // If the cart is empty on refresh, check local storage
+  useEffect(() => {
+    if (!store.cart.length) {
+      let data = JSON.parse(
+        window.localStorage.getItem("Matcha-Skincare-cart")
+      );
+      if (data) {
+        dispatch({
+          type: "addMultipleToCart",
+          products: [...data],
+        });
+      } else {
+        console.log("Cart Up to Date");
+      }
+    }
+  }, []);
 
   // Open/Close the cart
   function toggleCart() {

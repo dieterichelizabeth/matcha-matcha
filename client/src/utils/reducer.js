@@ -20,12 +20,15 @@ export default function reducer(state = initialState, action) {
     // Open/Close the cart
     case "cartToggle":
       return { ...state, cartOpen: !state.cartOpen };
+    // Open the cart
+    case "cartToggleOpen":
+      return { ...state, cartOpen: true };
     // Add a product to the car array
     case "addToCart":
       return { ...state, cart: [...state.cart, action.product] };
     // Add multiple products to the cart array
     case "addMultipleToCart":
-      return { ...state, cart: [...state.cart, action.products] };
+      return { ...state, cart: [...state.cart, ...action.products] };
     // Update the quantity of a product in the cart
     case "updateCartQuantity":
       return {

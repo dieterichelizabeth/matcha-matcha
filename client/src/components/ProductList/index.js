@@ -19,6 +19,10 @@ const ProductList = () => {
     // Save products to the Redux Store.
     if (data) {
       dispatch({ type: "updateProducts", products: data.products });
+      window.localStorage.setItem(
+        "Matcha-Skincare",
+        JSON.stringify({ products: data })
+      );
     }
   }, [data, loading, dispatch]);
 

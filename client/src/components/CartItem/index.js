@@ -1,16 +1,23 @@
 import { useDispatch } from "react-redux";
+import {
+  removeFromLocalCart,
+  updateLocalCartQty,
+} from "../../utils/helpers.js";
 
 const CartItem = ({ item }) => {
   // React-Redux dispatch hook for adding products to the Redux store.
   const dispatch = useDispatch();
 
   // Remove a product from the Cart array
-  const removeFromCart = () => {
+  function removeFromCart() {
     dispatch({
       type: "removeFromCart",
       _id: item._id,
     });
-  };
+
+    // Update the Local Storage Copy
+    removeFromLocalCart(item);
+  }
 
   // Update Cart Quantity based on User input
   const updateQuantity = (e) => {
@@ -21,12 +28,18 @@ const CartItem = ({ item }) => {
         type: "removeFromCart",
         _id: item._id,
       });
+
+      // Update the Local Storage Copy
+      removeFromLocalCart(item);
     } else {
       dispatch({
         type: "updateCartQuantity",
         _id: item._id,
         purchaseQuantity: parseInt(value),
       });
+
+      // Update the Local Storage Copy
+      updateLocalCartQty(item, value);
     }
   };
 
