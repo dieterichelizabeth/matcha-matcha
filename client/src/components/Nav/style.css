@@ -1,8 +1,15 @@
 nav {
+  height: 50px;
   z-index: 10;
 }
 
 /*Styling logo*/
+.logo img {
+  height: 16px;
+  width: 16px;
+  padding-right: 5px;
+}
+
 .logo {
   top: 15px;
   position: absolute;

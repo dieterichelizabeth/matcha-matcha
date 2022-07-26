@@ -2,7 +2,6 @@ import React from "react";
 import CategoryMenu from "../components/CategoryMenu";
 import ProductList from "../components/ProductList";
 import { useSelector } from "react-redux";
-import heroImage from "../components/assets/hero.png";
 
 const Home = () => {
   // Access and use data from the Redux store state.
@@ -20,7 +19,9 @@ const Home = () => {
 
   return (
     <div>
-      <img className="hero-image" src={heroImage} />
+      <div className="free-shipping-ad">
+        <p>Free Shipping on Orders over $100</p>
+      </div>
       <CategoryMenu />
       <hr />
       <p className="catalog-page-divider">

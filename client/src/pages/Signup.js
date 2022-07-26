@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
-import signupImage from "../components/assets/signup.png";
 
 const Signup = () => {
   const [addUser, { error }] = useMutation(ADD_USER);
@@ -55,11 +54,6 @@ const Signup = () => {
 
   return (
     <div className="signup-page">
-      <img
-        className="signup-image"
-        src={signupImage}
-        alt="Cotton Candy colored water art"
-      />
       <div className="signup-form-container">
         <h1>Signup</h1>
         <p className="login-welcome">Welcome! Create a new account</p>

@@ -7,6 +7,7 @@ const Nav = () => {
     <nav>
       {/* Company Name or Logo */}
       <div className="logo">
+        <img src={require("../assets/logo.png")} alt="a giant M and S" />
         <a href="/">Matcha Skincare</a>
       </div>
 

@@ -80,8 +80,8 @@ const Detail = () => {
 
   return (
     <div>
+      {Breadcrumb}
       <div className="details-page">
-        {/* {Breadcrumb} */}
         {/* Product Image */}
         <div className="detailsImage">
           <img

@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { useMutation } from "@apollo/client";
 import { LOGIN } from "../utils/mutations";
 import Auth from "../utils/auth";
-import loginImage from "../components/assets/login.png";
 
 const Login = () => {
   // Access and use data from the Redux store state.
@@ -48,11 +47,6 @@ const Login = () => {
 
   return (
     <div className="login-page">
-      <img
-        className="login-image"
-        src={loginImage}
-        alt="Cotton Candy colored water art"
-      />
       <div className="login-form-container">
         <div className="login-form">
           <h1>Login</h1>
