@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addToLocalCart, updateLocalCartQtyPlusOne } from "../utils/helpers";
@@ -9,21 +10,37 @@ const Detail = () => {
   // Access and use data from the Redux store state.
   const store = useSelector((state) => state);
 
+  const [product, setCurrentProduct] = useState({});
+
   // Use the id from the URL
   const { id } = useParams();
 
-  // Find the product details from the Redux Store
-  const product = store.products.find((product) => product._id === id);
+  useEffect(() => {
+    // Find the product details from the Redux Store
+    if (store.products[0]) {
+      setCurrentProduct(store.products.find((product) => product._id === id));
+    }
+    // If the product is not in the redux store, check local storage
+    else if (!store.products[0]) {
+      let data = JSON.parse(window.localStorage.getItem("Matcha-Skincare"));
+      // map through local storage products for a matching item._id
+      data.products.products.map((item) => {
+        if (id === item._id) {
+          setCurrentProduct(item);
+        }
+        return item;
+      });
+    }
+  }, [store.products, id]);
+
+  console.log(product);
 
   // Breadcrumb
   const Breadcrumb = (
-    <div>
+    <div className="breadcrumb-container">
       <ul className="breadcrumb">
         <li>
           <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/catalog">Catalog</a>
         </li>
         <li>{product.name}</li>
       </ul>
@@ -63,8 +80,8 @@ const Detail = () => {
 
   return (
     <div>
-      {Breadcrumb}
       <div className="details-page">
+        {/* {Breadcrumb} */}
         {/* Product Image */}
         <div className="detailsImage">
           <img

@@ -19,7 +19,6 @@ import NoMatch from "./pages/NoMatch";
 import OrderHistory from "./pages/OrderHistory";
 import Signup from "./pages/Signup";
 import Success from "./pages/Success";
-import Catalog from "./pages/Catalog";
 
 // ---------------------------- Apollo/Graphql Setup ----------------------------- //
 // Middleware - establish a new link to the GraphQL server at its "/graphql" endpoint
@@ -54,7 +53,7 @@ function App() {
               <Nav />
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/catalog" element={<Catalog />} />
+
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/orderHistory" element={<OrderHistory />} />

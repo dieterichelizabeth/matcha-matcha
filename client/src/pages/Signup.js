@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
+import signupImage from "../components/assets/signup.png";
 
 const Signup = () => {
   const [addUser, { error }] = useMutation(ADD_USER);
@@ -53,67 +54,75 @@ const Signup = () => {
   }
 
   return (
-    <div className="signup-form-container">
-      <h1>Signup</h1>
-      <form name="sign-up" onSubmit={handleFormSubmit}>
-        {/* First Name Input */}
-        <label htmlFor="firstName">First name</label>
-        <br />
-        <input
-          className="form-input-field"
-          type="text"
-          id="firstName"
-          name="firstName"
-          placeholder="Please enter your first name"
-          onChange={handleChange}
-        />
-        <br />
-        {/* Last Name Input */}
-        <label htmlFor="lastName">Last name</label>
-        <br />
-        <input
-          className="form-input-field"
-          type="text"
-          id="lastName"
-          name="lastName"
-          placeholder="Please enter your last name"
-          onChange={handleChange}
-        />
-        <br />
-        {/* Email Input */}
-        <label htmlFor="email">Email</label>
-        <br />
-        <input
-          className="form-input-field"
-          type="text"
-          id="email"
-          name="email"
-          placeholder="Please enter your email address"
-          onChange={handleChange}
-        />
-        <br />
-        <label htmlFor="password">Password</label>
-        <br />
-        {/* Password Input */}
-        <input
-          className="form-input-field"
-          type="password"
-          id="myInput"
-          name="password"
-          placeholder="Please create a password"
-          onChange={handleChange}
-        />{" "}
-        <br />
-        <input type="checkbox" onClick={showPassword} /> Show Password <br />
-        <button className="form-submit-button">Create Account</button>
-      </form>
-      {error ? (
-        <div>
-          <p className="error-text">
-            Something went wrong with creating your account. Please try again.
-          </p>
-        </div>
-      ) : null}
+    <div className="signup-page">
+      <img
+        className="signup-image"
+        src={signupImage}
+        alt="Cotton Candy colored water art"
+      />
+      <div className="signup-form-container">
+        <h1>Signup</h1>
+        <p className="login-welcome">Welcome! Create a new account</p>
+        <form name="sign-up" onSubmit={handleFormSubmit}>
+          {/* First Name Input */}
+          <label htmlFor="firstName">First name</label>
+          <br />
+          <input
+            className="form-input-field"
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="Please enter your first name"
+            onChange={handleChange}
+          />
+          <br />
+          {/* Last Name Input */}
+          <label htmlFor="lastName">Last name</label>
+          <br />
+          <input
+            className="form-input-field"
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="Please enter your last name"
+            onChange={handleChange}
+          />
+          <br />
+          {/* Email Input */}
+          <label htmlFor="email">Email</label>
+          <br />
+          <input
+            className="form-input-field"
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Please enter your email address"
+            onChange={handleChange}
+          />
+          <br />
+          <label htmlFor="password">Password</label>
+          <br />
+          {/* Password Input */}
+          <input
+            className="form-input-field"
+            type="password"
+            id="myInput"
+            name="password"
+            placeholder="Please create a password"
+            onChange={handleChange}
+          />{" "}
+          <br />
+          <input type="checkbox" onClick={showPassword} /> Show Password <br />
+          <button className="form-submit-button">Create Account</button>
+        </form>
+        {error ? (
+          <div>
+            <p className="error-text">
+              Something went wrong with creating your account. Please try again.
+            </p>
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 };
