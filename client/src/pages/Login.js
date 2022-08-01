@@ -1,14 +1,9 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
 import { useMutation } from "@apollo/client";
 import { LOGIN } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 const Login = () => {
-  // Access and use data from the Redux store state.
-  const store = useSelector((state) => state);
-  console.log(store);
-
   const [login, { error }] = useMutation(LOGIN);
 
   // Form State

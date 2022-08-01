@@ -1,6 +1,10 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Product, Category } = require("../models");
+const { User, Product, Category, Order } = require("../models");
 const { signToken } = require("../utils/auth");
+
+// Stripe test key for development from Stripe documentation
+// DO NOT INPUT SENSATIVE INFORMATION WITH THIS PUBLIC KEY
+const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
 const resolvers = {
   Query: {
@@ -42,6 +46,53 @@ const resolvers = {
       }
 
       throw new AuthenticationError("Not logged in!");
+    },
+    // expects an array of product ID's
+    checkout: async (parent, args, context) => {
+      // parse out the referring URL, for a base domain that the request came from
+      // use this url for redirect on success back to shop-shop's success page
+      const url = new URL(context.headers.referer).origin;
+
+      // Create a new instance of an Order Mongoose modle
+      const order = new Order({ products: args.products });
+
+      const line_items = [];
+
+      const { products } = await order.populate("products");
+
+      for (let i = 0; i < products.length; i++) {
+        // generate product id
+        const product = await stripe.products.create({
+          name: products[i].name,
+          description: products[i].description,
+          images: [`${url}/images/${products[i].image}`],
+        });
+
+        // generate price id using the product id
+        // multiply by 100 because Stripe stores prices in cents, not dollars
+        const price = await stripe.prices.create({
+          product: product.id,
+          unit_amount: products[i].price * 100,
+          currency: "usd",
+        });
+
+        // add price id to the line items array
+        line_items.push({
+          price: price.id,
+          quantity: 1,
+        });
+      }
+
+      // generate a Stripe checkout session and return the session.id
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ["card"],
+        line_items,
+        mode: "payment",
+        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${url}/`,
+      });
+
+      return { session: session.id };
     },
   },
   Mutation: {

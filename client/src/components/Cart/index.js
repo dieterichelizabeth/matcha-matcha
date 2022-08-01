@@ -2,6 +2,14 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartItem from "../CartItem";
 import "./style.css";
+import { QUERY_CHECKOUT } from "../../utils/queries";
+import { useLazyQuery } from "@apollo/client";
+import Auth from "../../utils/auth";
+import { loadStripe } from "@stripe/stripe-js";
+
+// Stripe test key for development from Stripe documentation
+// DO NOT INPUT SENSATIVE INFORMATION WITH THIS PUBLIC KEY
+const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 const Cart = () => {
   // React-Redux dispatch hook for adding products to the Redux store.
@@ -9,6 +17,21 @@ const Cart = () => {
 
   // Access and use data from the Redux store state.
   const store = useSelector((state) => state);
+
+  // Checkout query state variables
+  const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+
+  // useLazyQuery to run Hook on button ("checkout") click
+  // data variable will contain the checkout session, but only after the query is called with the getCheckout() function
+  // After the payment processes, users will be redirected to <path>/success.
+  useEffect(() => {
+    // redirect to Stripe once the data variable has data in it.
+    if (data) {
+      stripePromise.then((res) => {
+        res.redirectToCheckout({ sessionId: data.checkout.session });
+      });
+    }
+  }, [data]);
 
   // If the cart is empty on refresh, check local storage
   useEffect(() => {
@@ -26,6 +49,43 @@ const Cart = () => {
       }
     }
   }, []);
+
+  // state.cart.length is passed as a value in the dependency array to ensure the hook only executes if the depenency array has changed since last ran
+  useEffect(() => {
+    async function getCart() {
+      const cart = await JSON.parse(
+        window.localStorage.getItem("Matcha-Skincare-cart")
+      );
+      dispatch({ type: "addMultipleToCart", products: [...cart] });
+    }
+
+    // if the state.cart.length === 0, retrieve the items from the cart object store
+    // save it to the global state object
+    // use ADD_MULTIPLE_TO_CART because we have an array of items returning from IndexedDB, even if it's just one product saved
+    if (!store.cart.length) {
+      getCart();
+    }
+  }, [store.cart.length, dispatch]);
+
+  function submitCheckout() {
+    window.alert(
+      "⚠️ WARNING ⚠️ - After pressing okay, the Stripe checkout page will display with an option to put in payment information. ⛔️ DO NOT ENTER SENSATIVE PERSONAL INFORMATION OR REAL CREDIT CARD NUMBERS! ⛔️ This project uses Stripe's public test key and the information that you provide is not secure."
+    );
+
+    const productIds = [];
+
+    // loop over all items saved in state.cart then,
+    // add their ID's to a new productId's array for generating the Stripe session during query
+    store.cart.forEach((item) => {
+      for (let i = 0; i < item.purchaseQuantity; i++) {
+        productIds.push(item._id);
+      }
+    });
+
+    getCheckout({
+      variables: { products: productIds },
+    });
+  }
 
   // Open/Close the cart
   function toggleCart() {
@@ -52,6 +112,22 @@ const Cart = () => {
     );
   }
 
+  // Checkout Button
+  // If the user is logged in, allow them to proceed to Stripe's checkout page
+  const checkoutButtons = (
+    <div>
+      {Auth.loggedIn() ? (
+        <button onClick={submitCheckout} className="checkout-button">
+          CHECKOUT
+        </button>
+      ) : (
+        <button className="checkout-button">
+          <a href="/login">Login to Checkout</a>
+        </button>
+      )}
+    </div>
+  );
+
   return (
     <div className="shopping-cart-open">
       <div className="shopping-cart-close-button" onClick={toggleCart}>
@@ -73,8 +149,7 @@ const Cart = () => {
             </div>
             <hr></hr>
 
-            {/* Checkout Button */}
-            <button className="checkout-button">CHECKOUT</button>
+            {checkoutButtons}
           </div>
         ) : (
           <div>
@@ -84,9 +159,8 @@ const Cart = () => {
               alt="Drawing of a person stand next to an empty shopping cart."
             ></img>
             <p>Nothing added to cart yet!</p>
-            <button className="checkout-button">
-              <a href="/catalog">Go to Catalog</a>
-            </button>
+
+            {checkoutButtons}
           </div>
         )}
       </div>
