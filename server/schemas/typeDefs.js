@@ -18,6 +18,12 @@ const typeDefs = gql`
     benefits: String
   }
 
+  type Order {
+    _id: ID
+    purchaseDate: String
+    products: [Product]
+  }
+
   type User {
     _id: ID
     firstName: String
@@ -34,6 +40,7 @@ const typeDefs = gql`
     products(category: ID, name: String): [Product]
     product(_id: ID!): Product
     user: User
+    order(_id: ID!): Order
   }
 
   type Mutation {
@@ -43,6 +50,7 @@ const typeDefs = gql`
       email: String!
       password: String!
     ): Auth
+    addOrder(products: [ID]!): Order
     login(email: String!, password: String!): Auth
   }
 `;
