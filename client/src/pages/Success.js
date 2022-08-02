@@ -25,7 +25,7 @@ const Success = () => {
 
       setTimeout(() => {
         window.location.assign("/");
-      }, 20000);
+      }, 10000);
     }
 
     saveOrder();
@@ -33,10 +33,6 @@ const Success = () => {
 
   return (
     <div className="success-page">
-      <h1>Success!</h1>
-      <p className="success-text">
-        Thank you for your purchase! View Order details in your Order History.
-      </p>
       <div className="success-page-button-container">
         <button className="back-to-home-button">
           {" "}
@@ -46,6 +42,9 @@ const Success = () => {
           {" "}
           <Link to="/orderHistory">View Order History</Link>
         </button>
+      </div>
+      <div className="container">
+        <div className="success-graphic"></div>
       </div>
     </div>
   );

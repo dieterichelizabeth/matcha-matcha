@@ -366,6 +366,23 @@ input:focus {
 /* ----------- STYLES TO SUCCESS PAGE ----------- */
 .success-page {
   text-align: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-graphic {
+  /* height: 100vh; */
+  width: 700px;
+  height: 600px;
+  background-image: url("./components/assets/success.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .success-text {
   color: rgb(148, 148, 148);
@@ -375,11 +392,12 @@ input:focus {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .back-to-home-button {
   cursor: pointer;
-  background-color: rgb(6, 138, 254);
+  background-color: rgb(11, 55, 14);
   border: none;
   padding: 5px;
   padding-left: 20px;
@@ -389,10 +407,11 @@ input:focus {
 
 .back-to-home-button a {
   color: white;
+  text-decoration: none;
 }
 
 .back-to-home-button:hover {
-  background-color: rgb(64, 157, 238);
+  background-color: rgba(14, 73, 18, 0.821);
 }
 
 .view-orders-button {
@@ -405,6 +424,7 @@ input:focus {
 
 .view-orders-button a {
   color: black;
+  text-decoration: none;
 }
 
 .view-orders-button:hover {
@@ -492,6 +512,12 @@ input:focus {
   .order-history h2 {
     margin-top: 20px;
   }
+
+  /* Success Page */
+  .success-graphic {
+    width: 500px;
+    height: 600px;
+  }
 }
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
@@ -515,5 +541,12 @@ input:focus {
   .signup-image {
     width: 0%;
     height: 0px;
+  }
+
+  /* Success Page */
+  .success-graphic {
+    margin-top: 80px;
+    width: 400px;
+    height: 400px;
   }
 }
