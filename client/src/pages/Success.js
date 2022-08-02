@@ -25,7 +25,7 @@ const Success = () => {
 
       setTimeout(() => {
         window.location.assign("/");
-      }, 3000);
+      }, 20000);
     }
 
     saveOrder();

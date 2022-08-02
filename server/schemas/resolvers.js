@@ -30,10 +30,17 @@ const resolvers = {
     },
     user: async (parent, args, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id);
+        const user = await User.findById(context.user._id).populate({
+          path: "orders.products",
+          populate: "category",
+        });
+
+        user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
 
         return user;
       }
+
+      throw new AuthenticationError("Not logged in");
     },
     order: async (parent, { _id }, context) => {
       if (context.user) {
@@ -45,7 +52,7 @@ const resolvers = {
         return user.orders.id(_id);
       }
 
-      throw new AuthenticationError("Not logged in!");
+      throw new AuthenticationError("Not logged in");
     },
     // expects an array of product ID's
     checkout: async (parent, args, context) => {
