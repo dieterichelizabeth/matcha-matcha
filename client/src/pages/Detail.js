@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addToLocalCart, updateLocalCartQtyPlusOne } from "../utils/helpers";
+import Footer from "../components/Footer";
 
 const Detail = () => {
   // React-Redux dispatch hook for adding products to the Redux store.
@@ -114,6 +115,7 @@ const Detail = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

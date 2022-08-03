@@ -1,6 +1,7 @@
 import React from "react";
 import CategoryMenu from "../components/CategoryMenu";
 import ProductList from "../components/ProductList";
+import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
 
 const Home = () => {
@@ -20,7 +21,7 @@ const Home = () => {
   return (
     <div>
       <div className="free-shipping-ad">
-        <p>Free Shipping on Orders over $100</p>
+        <p>Free Shipping on all Orders!</p>
       </div>
       <CategoryMenu />
       <hr />
@@ -29,6 +30,8 @@ const Home = () => {
       </p>
       <hr />
       <ProductList />
+
+      <Footer />
     </div>
   );
 };

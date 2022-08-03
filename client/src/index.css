@@ -227,7 +227,7 @@ hr {
 /* ----------- STYLES TO SIGNUP PAGE ----------- */
 .login-page,
 .signup-page {
-  min-height: 100vh;
+  min-height: 85vh;
 }
 
 .signup-form-container,
@@ -435,6 +435,36 @@ input:focus {
   color: rgb(64, 157, 238);
 }
 
+/* ----------- STYLES TO FOOTER ----------- */
+
+.footer {
+  background-color: #bdbebe45;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.footer p {
+  padding: 0px;
+  margin: 0px;
+  font-size: 15px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-logo {
+  height: 25px;
+  width: 25px;
+}
+
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 /* applied on any screen smaller than 980px */
 @media screen and (max-width: 980px) {
@@ -532,9 +562,13 @@ input:focus {
   }
 
   /* Signup Page */
+  /* .login-page,
+  .signup-page {
+    min-height: 95vh;
+  } */
   .signup-form-container,
   .login-form-container {
-    width: 100%;
+    width: 90%;
     margin-top: 0px;
   }
   .login-image,
