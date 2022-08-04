@@ -43,6 +43,15 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+//---- ApolloProvider:
+// https://www.apollographql.com/docs/react/get-started/
+// Give the application access to the server's API data
+// Pass the client variable as the value for the client prop in the Apollo Provider
+//---- Provider:
+// https://react-redux.js.org/api/provider
+// Give the application access to the Redux store
+// Pass the store variable
+
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -53,7 +62,6 @@ function App() {
               <Nav />
               <Routes>
                 <Route path="/" element={<Home />} />
-
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/orderHistory" element={<OrderHistory />} />
@@ -70,16 +78,3 @@ function App() {
 }
 
 export default App;
-
-/*
- ----------- Notes ------------
-
-- ApolloProvider: 
-    // https://www.apollographql.com/docs/react/get-started/
-    // Give the application access to the server's API data
-    // Pass the client variable as the value for the client prop in the Apollo Provider
-- Provider: 
-    // https://react-redux.js.org/api/provider
-    // Give the application access to the Redux store
-    // Pass the store variable
-*/

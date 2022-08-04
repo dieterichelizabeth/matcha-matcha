@@ -1,15 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import CategoryMenu from "../components/CategoryMenu";
 import ProductList from "../components/ProductList";
 import Footer from "../components/Footer";
-import { useSelector } from "react-redux";
 
 const Home = () => {
   // Access and use data from the Redux store state.
   const store = useSelector((state) => state);
 
+  // Use redux store to display current category name.
   const categoryName = getName();
-
   function getName() {
     if (store.currentCategory) {
       const id = store.currentCategory;

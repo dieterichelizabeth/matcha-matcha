@@ -5,9 +5,9 @@ import { QUERY_USER } from "../utils/queries";
 import Footer from "../components/Footer";
 
 const OrderHistory = () => {
+  // Get the User Data from the database
   const { loading, data } = useQuery(QUERY_USER);
   let user;
-
   if (data) {
     user = data.user;
   }

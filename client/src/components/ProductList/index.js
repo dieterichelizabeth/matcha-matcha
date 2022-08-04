@@ -5,18 +5,15 @@ import { QUERY_ALL_PRODUCTS } from "../../utils/queries";
 import { useSelector, useDispatch } from "react-redux";
 
 const ProductList = () => {
-  // React-Redux dispatch hook for adding products to the Redux store.
+  // Access and interact with the Redux Store
   const dispatch = useDispatch();
-
-  // Access and use data from the Redux store state.
   const store = useSelector((state) => state);
 
   // On page load, attempt to gather "products" from the Database
   const { loading, data } = useQuery(QUERY_ALL_PRODUCTS);
 
-  // Once the data object is returned from useQuery(), execute the dispatch function.
+  // Once the data object is returned from useQuery(), execute the dispatch function to save products to the Redux Store.
   useEffect(() => {
-    // Save products to the Redux Store.
     if (data) {
       dispatch({ type: "updateProducts", products: data.products });
       window.localStorage.setItem(
@@ -26,9 +23,8 @@ const ProductList = () => {
     }
   }, [data, loading, dispatch]);
 
-  // Filter what products display based on what the current Category is.
+  // Filter products displayed based on the current Category.
   function filterProducts() {
-    // if there is no category selected, return all products
     if (!store.currentCategory) {
       return store.products;
     }
@@ -41,8 +37,6 @@ const ProductList = () => {
 
   return (
     <div className="product-results-container">
-      {/* If there are products in the store, display the product cards. 
-          If there are no products in the store after data is recieved from the database, display "no products". */}
       {store.products[0] ? (
         <>
           {filterProducts().map((product) => (
@@ -60,19 +54,9 @@ const ProductList = () => {
         <p>There are no products yet!</p>
       )}
 
-      {/* If data from the database is still loading, display "loading" */}
       {loading ? <p>loading</p> : null}
     </div>
   );
 };
 
 export default ProductList;
-
-/*
- ----------- Notes ------------
-
-https://react-redux.js.org/api/hooks
-- useDispatch: "hook returns a reference to the dispatch function from the Redux store, used for dispatch actions."
-- useSelector(): "will also subscribe to the Redux store, and run your selector whenever an action is dispatched."
-- dispatch variable added to dependency array for useEffect (Per react-redux hooks documentation)
-*/

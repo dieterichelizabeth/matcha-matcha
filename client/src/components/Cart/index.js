@@ -11,10 +11,8 @@ import { loadStripe } from "@stripe/stripe-js";
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 const Cart = () => {
-  // React-Redux dispatch hook for adding products to the Redux store.
+  // Access and interact with the Redux Store
   const dispatch = useDispatch();
-
-  // Access and use data from the Redux store state.
   const store = useSelector((state) => state);
 
   // Checkout query state variables
@@ -42,9 +40,6 @@ const Cart = () => {
       dispatch({ type: "addMultipleToCart", products: [...cart] });
     }
 
-    // if the state.cart.length === 0, retrieve the items from the cart object store
-    // save it to the global state object
-    // use ADD_MULTIPLE_TO_CART because we have an array of items returning from IndexedDB, even if it's just one product saved
     if (!store.cart.length) {
       getCart();
     }
@@ -57,8 +52,7 @@ const Cart = () => {
 
     const productIds = [];
 
-    // loop over all items saved in state.cart then,
-    // add their ID's to a new productId's array for generating the Stripe session during query
+    // loop over all items saved in state.cart then, add their ID's to a new productId's array for generating the Stripe session during query
     store.cart.forEach((item) => {
       for (let i = 0; i < item.purchaseQuantity; i++) {
         productIds.push(item._id);
@@ -95,7 +89,6 @@ const Cart = () => {
     );
   }
 
-  // Checkout Button
   // If the user is logged in, allow them to proceed to Stripe's checkout page
   const checkoutButtons = (
     <div>

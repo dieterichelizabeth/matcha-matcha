@@ -3,10 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { addToLocalCart, updateLocalCartQtyPlusOne } from "../../utils/helpers";
 
 const ProductItem = (product) => {
-  // React-Redux dispatch hook for adding products to the Redux store.
+  // Access and interact with the Redux Store
   const dispatch = useDispatch();
-
-  // Access and use data from the Redux store state.
   const store = useSelector((state) => state);
 
   async function addToCart() {
@@ -22,10 +20,8 @@ const ProductItem = (product) => {
         purchaseQuantity: parseInt(alreadyInCart.purchaseQuantity) + 1,
       });
 
-      // Open the Cart
+      // Open the Cart and Update Local Storage Copy
       dispatch({ type: "cartToggleOpen" });
-
-      // Update Local Storage Copy
       updateLocalCartQtyPlusOne(product);
     } else {
       // Else, add to store cart
@@ -34,10 +30,8 @@ const ProductItem = (product) => {
         product: { ...product, purchaseQuantity: 1 },
       });
 
-      // Open the Cart
+      // Open the Cart and Update Local Storage Copy
       dispatch({ type: "cartToggleOpen" });
-
-      // Update Local Storage Copy
       addToLocalCart(product);
     }
   }

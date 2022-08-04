@@ -4,10 +4,8 @@ import { QUERY_CATEGORIES } from "../../utils/queries";
 import { useSelector, useDispatch } from "react-redux";
 
 function CategoryMenu() {
-  // React-Redux dispatch hook for adding products to the Redux store.
+  // Access and interact with the Redux Store
   const dispatch = useDispatch();
-
-  // Access and use data from the Redux store state.
   const store = useSelector((state) => state);
 
   // On page load, attempt to gather "category names" from the Database
@@ -34,7 +32,6 @@ function CategoryMenu() {
   return (
     <div>
       <div className="category-button-container">
-        {/* If Categories are retrieved from the database, display them to the user */}
         {store.categories ? (
           <>
             {store.categories.map((category) => (
@@ -53,7 +50,6 @@ function CategoryMenu() {
           <></>
         )}
 
-        {/* If categories do not return from the database after load, do not attempt to display menu */}
         {loading ? <p>Loading..</p> : null}
       </div>
     </div>

@@ -5,10 +5,8 @@ import { addToLocalCart, updateLocalCartQtyPlusOne } from "../utils/helpers";
 import Footer from "../components/Footer";
 
 const Detail = () => {
-  // React-Redux dispatch hook for adding products to the Redux store.
+  // Access and interact with the Redux Store
   const dispatch = useDispatch();
-
-  // Access and use data from the Redux store state.
   const store = useSelector((state) => state);
 
   const [product, setCurrentProduct] = useState({});
@@ -21,9 +19,12 @@ const Detail = () => {
     if (store.products[0]) {
       setCurrentProduct(store.products.find((product) => product._id === id));
     }
+
     // If the product is not in the redux store, check local storage
+    // Example: if the user refreshes the page, use local storage to display the product
     else if (!store.products[0]) {
       let data = JSON.parse(window.localStorage.getItem("Matcha-Skincare"));
+
       // map through local storage products for a matching item._id
       data.products.products.map((item) => {
         if (id === item._id) {
@@ -57,22 +58,18 @@ const Detail = () => {
         purchaseQuantity: parseInt(alreadyInCart.purchaseQuantity) + 1,
       });
 
-      // Open the cart
+      // Open the cart and update the Local Storage copy
       dispatch({ type: "cartToggleOpen" });
-
-      // Update the Local Storage Copy
       updateLocalCartQtyPlusOne(product);
     } else {
-      // Else, add to cart
+      // Else, add the product to cart
       dispatch({
         type: "addToCart",
         product: { ...product, purchaseQuantity: 1 },
       });
 
-      // Open the cart
+      // Open the cart and update the Local Storage copy
       dispatch({ type: "cartToggleOpen" });
-
-      // Update the Local Storage Copy
       addToLocalCart(product);
     }
   };

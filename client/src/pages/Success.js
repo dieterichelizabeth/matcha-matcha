@@ -7,6 +7,8 @@ import { ADD_ORDER } from "../utils/mutations";
 const Success = () => {
   const [addOrder] = useMutation(ADD_ORDER);
 
+  // Create an Order for the User and save to database
+  // As each product is added to the 'Order', remove from local storage
   useEffect(() => {
     async function saveOrder() {
       const cart = await JSON.parse(
@@ -23,6 +25,7 @@ const Success = () => {
         });
       }
 
+      // Redirect to Home after 10 secconds
       setTimeout(() => {
         window.location.assign("/");
       }, 10000);

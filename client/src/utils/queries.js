@@ -74,5 +74,3 @@ export const QUERY_USER = gql`
     }
   }
 `;
-
-// The User Query will not work with "orders" as a parameter.
