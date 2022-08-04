@@ -1,5 +1,4 @@
 import Auth from "../../utils/auth";
-import "./style.css";
 import Cart from "../Cart";
 
 const Nav = () => {

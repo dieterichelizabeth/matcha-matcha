@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartItem from "../CartItem";
-import "./style.css";
 import { QUERY_CHECKOUT } from "../../utils/queries";
 import { useLazyQuery } from "@apollo/client";
 import Auth from "../../utils/auth";
