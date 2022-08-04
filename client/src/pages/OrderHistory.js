@@ -5,14 +5,12 @@ import { QUERY_USER } from "../utils/queries";
 import Footer from "../components/Footer";
 
 const OrderHistory = () => {
-  const { data } = useQuery(QUERY_USER);
+  const { loading, data } = useQuery(QUERY_USER);
   let user;
 
   if (data) {
     user = data.user;
   }
-
-  console.log(data);
 
   // Calculate cart total based on items in User's cart
   function orderTotal(order) {
@@ -24,14 +22,16 @@ const OrderHistory = () => {
     return sum.toFixed(2);
   }
 
+  if (loading) return "Loading";
+
   return (
     <div>
       <div className="order-history">
         <div className="order-history-user"></div>
         <div className="order-history-orders">
-          {user ? (
+          <h2>My Orders</h2>
+          {user.orders[0] ? (
             <>
-              <h2>My Orders</h2>
               {user.orders.map((order) => (
                 <div key={order._id} className="order-cards">
                   <h3 className="order-date">
@@ -71,7 +71,9 @@ const OrderHistory = () => {
                 </div>
               ))}
             </>
-          ) : null}
+          ) : (
+            <p className="no-order-history">No Previous Orders.</p>
+          )}
         </div>
       </div>
       <Footer />

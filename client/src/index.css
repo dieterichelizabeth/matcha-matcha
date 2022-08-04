@@ -321,6 +321,16 @@ input:focus {
   width: 100%;
 }
 
+.no-order-history {
+  background-color: #9fa0a020;
+  color: rgba(128, 128, 128, 0.544);
+  width: 50%;
+  margin-left: 25%;
+  padding: 20px;
+  text-align: center;
+  height: 80px;
+}
+
 .order-history hr {
   width: 100%;
 }
@@ -555,6 +565,7 @@ input:focus {
   }
   .order-history-orders {
     width: 100%;
+    min-height: 60vh;
   }
   .order-history h2 {
     margin-top: 20px;

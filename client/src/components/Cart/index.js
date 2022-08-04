@@ -34,22 +34,6 @@ const Cart = () => {
   }, [data]);
 
   // If the cart is empty on refresh, check local storage
-  useEffect(() => {
-    if (!store.cart.length) {
-      let data = JSON.parse(
-        window.localStorage.getItem("Matcha-Skincare-cart")
-      );
-      if (data) {
-        dispatch({
-          type: "addMultipleToCart",
-          products: [...data],
-        });
-      } else {
-        console.log("Cart Up to Date");
-      }
-    }
-  }, []);
-
   // state.cart.length is passed as a value in the dependency array to ensure the hook only executes if the depenency array has changed since last ran
   useEffect(() => {
     async function getCart() {

@@ -34,8 +34,6 @@ const Detail = () => {
     }
   }, [store.products, id]);
 
-  console.log(product);
-
   // Breadcrumb
   const Breadcrumb = (
     <div className="breadcrumb-container">
