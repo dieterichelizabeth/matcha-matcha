@@ -435,6 +435,23 @@ input:focus {
   color: rgb(64, 157, 238);
 }
 
+.no-match-page {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-match-graphic {
+  background-image: url("./components/assets/404.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 80vw;
+  height: 65vh;
+  padding-top: 30px;
+}
+
 /* ----------- STYLES TO FOOTER ----------- */
 
 .footer {
@@ -562,10 +579,6 @@ input:focus {
   }
 
   /* Signup Page */
-  /* .login-page,
-  .signup-page {
-    min-height: 95vh;
-  } */
   .signup-form-container,
   .login-form-container {
     width: 90%;

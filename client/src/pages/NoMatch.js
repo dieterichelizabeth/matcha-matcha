@@ -1,15 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const NoMatch = () => {
+  // Redirect to home-page in 10 secconds
+  setTimeout(() => {
+    window.location.assign("/");
+  }, 5000);
+
   return (
     <div>
-      <p>No result 404</p>
-
-      <button>
-        {" "}
-        <Link to="/">Back Home</Link>
-      </button>
+      <div className="no-match-page">
+        <div className="no-match-graphic"></div>
+      </div>
+      <Footer />
     </div>
   );
 };
