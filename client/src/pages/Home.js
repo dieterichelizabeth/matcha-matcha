@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import Welcome from "../components/Welcome";
 import CategoryMenu from "../components/CategoryMenu";
 import ProductList from "../components/ProductList";
 import Footer from "../components/Footer";
@@ -20,6 +21,7 @@ const Home = () => {
 
   return (
     <div>
+      <Welcome />
       <div className="free-shipping-ad">
         <p>Free Shipping on all Orders!</p>
       </div>
