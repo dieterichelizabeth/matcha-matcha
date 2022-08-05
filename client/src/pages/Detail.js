@@ -82,7 +82,7 @@ const Detail = () => {
         <div className="detailsImage">
           <img
             style={{ width: "100%" }}
-            src={product.image}
+            src={`/images/${product.image}`}
             alt="product"
           ></img>
         </div>

@@ -42,7 +42,7 @@ const ProductItem = (product) => {
         <img
           className="product-image"
           alt="Beauty Product"
-          src={product.image}
+          src={`/images/${product.image}`}
         />
         <div className="product-card-text">
           <p className="product-name w100">{product.name}</p>

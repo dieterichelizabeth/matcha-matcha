@@ -51,7 +51,7 @@ const OrderHistory = () => {
                               <img
                                 className="product-image"
                                 alt="Beauty Product"
-                                src={image}
+                                src={`/images/${image}`}
                               />
                               <div className="product-card-text">
                                 <p className="product-name w100">{name}</p>
