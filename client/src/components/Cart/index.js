@@ -8,7 +8,7 @@ import { loadStripe } from "@stripe/stripe-js";
 
 // Stripe test key for development from Stripe documentation
 // DO NOT INPUT SENSATIVE INFORMATION WITH THIS PUBLIC KEY
-const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_FRONT);
 
 const Cart = () => {
   // Access and interact with the Redux Store
@@ -47,7 +47,11 @@ const Cart = () => {
 
   function submitCheckout() {
     window.alert(
-      "⚠️ WARNING ⚠️ - After pressing okay, the Stripe checkout page will display with an option to put in payment information. ⛔️ DO NOT ENTER SENSATIVE PERSONAL INFORMATION OR REAL CREDIT CARD NUMBERS! ⛔️ This project uses Stripe's public test key and the information that you provide is not secure."
+      `⚠️ WARNING ⚠️ - After pressing okay, the Stripe checkout page will display with an option to put in payment information. 
+      
+      ⛔️ DO NOT ENTER SENSATIVE PERSONAL INFORMATION OR REAL CREDIT CARD NUMBERS! ⛔️
+      
+      This project uses Stripe's public test key and the information that you provide is not secure.`
     );
 
     const productIds = [];
