@@ -2,6 +2,8 @@
 
 Matcha-Matcha Skincare is an e-commerce platform selling skincare and tea products. 🌻
 
+View the [Deployed Application](https://blooming-peak-73826.herokuapp.com/)
+
 Users can browse through products on the Homepage, and click on a product card to open the Details page (which contains additional information such as ingredients and benefits). Users can add and remove products to their cart, as well as update the quantity. Users must be logged in to proceed to checkout. Once a user is logged in, they may checkout using the Stripe Payment service. On completion, they are shown a success screen and are redirected to the Homepage. Users can view their previous orders under the “Orders” tab in the navber.
 
 At this time, the Stripe payment service uses a test key. Input of sensitive information is not secure. Here is a list of [Test Cards](https://stripe.com/docs/keys) from Stripe's Docs.
@@ -47,6 +49,7 @@ npm run seed
 ```
 
 4. Use [Sripe's test keys](https://stripe.com/docs/keys) in place of the following variables
+
 ```
 process.env.REACT_APP_STRIPE_FRONT
 process.env.STRIPE_THING
