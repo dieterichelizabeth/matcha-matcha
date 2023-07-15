@@ -1,0 +1,14 @@
+/* ----------- STYLES TO NOTIFICATIONS BAR (TOP OF PAGE) ----------- */
+.shipping__notification {
+  background-color: #a3bca176;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shipping__notification p {
+  font-family: "Open Sans", sans-serif;
+  color: #1f1f1f;
+  font-size: 0.95rem;
+}

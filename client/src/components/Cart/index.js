@@ -5,6 +5,7 @@ import { QUERY_CHECKOUT } from "../../utils/queries";
 import { useLazyQuery } from "@apollo/client";
 import Auth from "../../utils/auth";
 import { loadStripe } from "@stripe/stripe-js";
+import "./cart.css";
 
 // Stripe test key for development from Stripe documentation
 // DO NOT INPUT SENSATIVE INFORMATION WITH THIS PUBLIC KEY
