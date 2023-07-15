@@ -4,6 +4,8 @@ import Welcome from "../components/Welcome";
 import CategoryMenu from "../components/CategoryMenu";
 import ProductList from "../components/ProductList";
 import Footer from "../components/Footer";
+import Notification from "../components/Notification";
+import Nav from "../components/Nav";
 
 const Home = () => {
   // Access and use data from the Redux store state.
@@ -21,6 +23,8 @@ const Home = () => {
 
   return (
     <div>
+      <Notification />
+      <Nav />
       <Welcome />
       <div className="free-shipping-ad">
         <p>Free Shipping on all Orders!</p>

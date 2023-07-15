@@ -19,7 +19,7 @@ const Nav = () => {
               <a href="/our-story">Our Story</a>
             </li>
             <li>
-              <a href="/rit">Ritual Finder</a>
+              <a href="/blog">Read Our Blog</a>
             </li>
           </ul>
         </div>
@@ -64,7 +64,10 @@ const Nav = () => {
       {/* Company Name or Logo */}
       <div className="logo--container">
         <div className="logo">
-          <img src={require("../assets/logo.png")} alt="a giant M and S" />
+          <img
+            src={require("../assets/logo.png")}
+            alt="The company logo is four squares with dots in the middle."
+          />
           <a href="/">
             <span className="color-1">MATCHA</span>{" "}
             <span className="color-2">MATCHA</span>
@@ -100,16 +103,13 @@ const MobileNavSlider = ({ isOpen, setIsOpen }) => {
 
       <ul className="nav__main-mobile--links">
         <li>
-          <p>Shop All</p>
+          <a href="/shop">Shop Al</a>
         </li>
         <li>
           <a href="/our-story">Our Story</a>
         </li>
         <li>
-          <p>Consultation</p>
-        </li>
-        <li>
-          <a href="/ritual">Ritual Finder</a>
+          <a href="/blog">Read Our blog</a>
         </li>
       </ul>
 
