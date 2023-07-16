@@ -1,0 +1,309 @@
+/* Styles to Hero */
+.hero {
+  background-image: url("../components/assets/jacinta-christos-4wO5GON3mg4-unsplash.jpg");
+  height: 625px;
+  width: 100%;
+  background-size: 120vw;
+  background-position: 30% 22%;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-image: url("../components/assets/hero-mobile.png");
+    background-position: 0% 22%;
+    height: 500px;
+  }
+}
+
+.hero__msg-container {
+  width: 45%;
+  height: 100%;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    137deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 10%,
+    rgba(255, 255, 255, 1) 20%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  display: flex;
+  justify-content: center;
+}
+
+.hero__msg-container div {
+  width: 60%;
+  margin-top: 50px;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(148, 187, 233, 0) 60%,
+    rgba(148, 187, 233, 0) 100%
+  );
+}
+
+@media (max-width: 1200px) {
+  .hero__msg-container {
+    width: 50%;
+  }
+  .hero__msg-container div {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero__msg-container {
+    width: 60%;
+  }
+  .hero__msg-container div {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__msg-container {
+    width: 70%;
+  }
+  .hero__msg-container div {
+    width: 90%;
+  }
+}
+
+.hero__brand-names {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  margin: 15px auto;
+}
+
+.hero__product-name {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin: 15px auto;
+}
+
+.hero__product-desc {
+  font-family: "Headland One", serif;
+  margin: 15px auto;
+}
+
+.hero__btn {
+  background-color: #1f1f1f;
+  border: none;
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 0.625rem 0.75rem;
+  transition: 0.3s;
+}
+
+.hero__btn:hover {
+  cursor: pointer;
+  background-color: #1f1f1fdd;
+}
+
+/* Syltes to Best Sellers Section */
+.best-sellers__container {
+  text-align: center;
+  padding: 0px 70px;
+  margin-bottom: 60px;
+}
+
+.best-sellers__container h2 {
+  font-family: "Headland One", serif;
+  font-weight: 300;
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
+
+.best-sellers__card {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.094);
+  transition: 0.3s ease-out;
+}
+
+.best-sellers__card:hover {
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.best-sellers__card-text {
+  text-align: left;
+  padding: 20px;
+  padding-bottom: 0px;
+  margin-bottom: 20px;
+}
+
+.best-sellers__card-text p {
+  margin-block-start: 0.2em;
+  margin-block-end: 0.2em;
+}
+
+.best-sellers__card-button {
+  background-color: transparent;
+  border: 1px solid #1f1f1f;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  margin-bottom: 30px;
+  transition: 0.3s ease-out;
+}
+
+.best-sellers__card-button:hover {
+  cursor: pointer;
+  background-color: #1f1f1fcf;
+  color: #fff;
+}
+
+/* https://tobiasahlin.com/blog/how-to-animate-box-shadow/ */
+.best-sellers__card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-next,
+.swiper-button-prev {
+  color: black !important;
+}
+
+.swiper-button-prev.swiper-button-disabled::after,
+.swiper-button-next.swiper-button-disabled::after,
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 30px !important;
+}
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-prev {
+  left: 0px !important;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-next {
+  right: 0px !important;
+}
+
+/* Styles to Product Types Section */
+/* These top two are duplicates */
+.product-type-display__container {
+  text-align: center;
+  padding: 0px 70px;
+  margin-bottom: 100px;
+}
+
+.product-type-display__container h2 {
+  font-family: "Headland One", serif;
+  font-weight: 300;
+  margin-top: 70px;
+}
+
+.product-type-display__cards-container {
+  max-width: 1200px;
+  padding: 0 40px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.product-type-display__card {
+  width: 270px;
+}
+
+.product-type-background_img1,
+.product-type-background_img2,
+.product-type-background_img3,
+.product-type-background_img4 {
+  width: 100%;
+  height: 250px;
+}
+
+.product-type-background_img1 {
+  background-image: url("https://images.unsplash.com/photo-1556227702-5ec9eb8df3ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGhhbmQlMjBjcmVhbXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60");
+  background-size: 190%;
+  background-position: 20% 45%;
+}
+
+.product-type-background_img2 {
+  background-image: url("https://images.unsplash.com/photo-1643379855889-850035817d24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80");
+  background-size: 210%;
+  background-position: 65% 40%;
+}
+
+.product-type-background_img3 {
+  background-image: url("https://images.unsplash.com/photo-1508759073847-9ca702cec7d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+  background-size: 140%;
+  background-position: 50% 50%;
+}
+
+.product-type-background_img4 {
+  background-image: url("https://images.unsplash.com/photo-1589698272390-0501a07619bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60");
+  background-size: 140%;
+  background-position: 40% 0%;
+}
+
+/* Syltes to About Segment */
+.about-snipit__container {
+  display: flex;
+  align-items: center;
+  height: 75vh;
+  width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1651608100799-6fcf6af041ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.about-snipit__text {
+  width: 50%;
+  margin: auto;
+  background-color: hsla(0, 0%, 100%, 0.8);
+  text-align: center;
+  padding: 0 30px;
+  padding-bottom: 30px;
+}
+
+.about-snipit__text h2 {
+  font-family: "Darker Grotesque", sans-serif;
+  color: #1f1f1f;
+  font-size: 1.7em;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.about-snipit__text p {
+  font-family: "Headland One", serif;
+  font-size: 1.5em;
+  color: #1f1f1f;
+  letter-spacing: 1px;
+}
+
+.about-snipit__text a {
+  font-family: "Darker Grotesque", sans-serif;
+  color: #1f1f1f;
+  font-size: 1.7em;
+  font-weight: 700;
+}
+
+/* Syltes to Support Snipit */
+.support-snipit__container {
+  background-color: #7a9f79c9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.support-snipit__container p {
+  padding: 10px;
+  padding-right: 0px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  font-family: "Open Sans", sans-serif;
+  color: #1f1f1f;
+  font-size: 0.95rem;
+}

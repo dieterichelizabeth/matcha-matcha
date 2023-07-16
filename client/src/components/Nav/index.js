@@ -26,7 +26,7 @@ const Nav = () => {
         <div className="nav__main-mobile">
           <button className="nav__open-btn">
             <span
-              class="material-symbols-outlined"
+              className="material-symbols-outlined"
               onClick={() => setIsOpen(true)}
             >
               menu
@@ -93,7 +93,7 @@ const MobileNavSlider = ({ isOpen, setIsOpen }) => {
       <div className="nav__main-mobile--close-btn-container">
         <button className="nav__main-mobile--close-btn">
           <span
-            class="material-symbols-outlined"
+            className="material-symbols-outlined"
             onClick={() => setIsOpen(false)}
           >
             close
@@ -103,7 +103,7 @@ const MobileNavSlider = ({ isOpen, setIsOpen }) => {
 
       <ul className="nav__main-mobile--links">
         <li>
-          <a href="/shop">Shop Al</a>
+          <a href="/shop">Shop All</a>
         </li>
         <li>
           <a href="/our-story">Our Story</a>
