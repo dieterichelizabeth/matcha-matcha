@@ -495,23 +495,6 @@ input:focus {
   color: rgb(64, 157, 238);
 }
 
-.no-match-page {
-  min-height: 85vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.no-match-graphic {
-  background-image: url("./assets/404.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 80vw;
-  height: 65vh;
-  padding-top: 30px;
-}
-
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 /* applied on any screen smaller than 980px */
 @media screen and (max-width: 980px) {

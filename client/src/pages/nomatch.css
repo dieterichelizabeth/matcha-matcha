@@ -1,0 +1,52 @@
+/* Styles to 404 No Match Page */
+.no-match-page,
+.no-match-page__img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.no-match-page {
+  min-height: 80vh;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.no-match-page__img-container {
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .no-match-page__img-container {
+    width: 80%;
+  }
+
+  .no-match-page__img-container img {
+    width: 100%;
+  }
+}
+
+.no-match-page__text-container {
+  text-align: center;
+  margin-bottom: 120px;
+  padding: 40px;
+}
+
+.no-match-page__text-container h2 {
+  font-family: "Headland One", serif;
+  font-display: swap;
+  font-weight: 300;
+}
+
+.no-match-page__text-container p {
+  font-family: "Playfair Display", serif;
+  font-display: swap;
+  font-size: 1.2rem;
+}
+
+.no-match-page__text-container a {
+  font-family: "Darker Grotesque", sans-serif;
+  font-display: swap;
+  font-size: 1.3rem;
+  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.886);
+}
