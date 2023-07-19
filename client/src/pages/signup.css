@@ -1,0 +1,115 @@
+.display-none {
+  display: none;
+}
+
+/* ----------- STYLES TO SIGNUP/LOGIN PAGE ----------- */
+.login-page,
+.signup-page {
+  min-height: 80vh;
+}
+
+.signup-form-container,
+.login-form-container {
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  width: 30%;
+}
+
+.signup-form-container h1,
+.login-form-container h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 300;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.form-input-field {
+  border: 0.1px solid #4b535c;
+  font-size: 1rem;
+  margin: 10px 0px 10px 0px;
+  padding: 20px;
+  width: 95%;
+}
+
+.form-input-field:hover {
+  border: 0.1px solid rgb(64, 157, 238);
+  cursor: pointer;
+}
+
+input:focus {
+  border: 0.1px solid rgb(64, 157, 238);
+  outline: none;
+}
+
+.form-input-field::placeholder {
+  color: #4b535c;
+}
+
+.form-submit-button {
+  background-color: #4f7942;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  height: 50px;
+  margin-top: 20px;
+  padding: 5px;
+  transition: 1s ease-out;
+  width: 50%;
+}
+
+.form-submit-button:hover {
+  background-color: #57a16f;
+}
+
+.password-show {
+  margin-top: 15px;
+}
+
+.password-show:hover {
+  cursor: pointer;
+}
+
+.form-disclaimer {
+  color: #1f1f1fec;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-top: 25px;
+}
+
+.signup-link {
+  color: #1f1f1fec;
+}
+
+@media screen and (max-width: 980px) {
+  .signup-form-container,
+  .login-form-container {
+    width: 60%;
+  }
+  .login-image,
+  .signup-image {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .signup-form-container,
+  .login-form-container {
+    width: 70%;
+  }
+  .login-image,
+  .signup-image {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .signup-form-container,
+  .login-form-container {
+    width: 80%;
+    margin-top: 0px;
+  }
+}

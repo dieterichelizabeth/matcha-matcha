@@ -224,75 +224,6 @@ hr {
   border: 1px solid rgb(64, 157, 238);
 }
 
-/* ----------- STYLES TO SIGNUP/LOGIN PAGE ----------- */
-.login-page,
-.signup-page {
-  min-height: 85vh;
-}
-
-.signup-form-container,
-.login-form-container {
-  background-color: white;
-  padding: 20px;
-  width: 50%;
-  margin: auto;
-}
-
-.signup-form-container h1,
-.login-form-container h1 {
-  font-family: "Baloo Chettan 2", cursive;
-  font-size: 40px;
-  margin: 0;
-}
-
-label {
-  color: grey;
-}
-
-.login-welcome {
-  color: grey;
-  margin-bottom: 40px;
-}
-
-.form-input-field {
-  margin: 10px 0px 20px 0px;
-  height: 30px;
-  width: 95%;
-  border: 0.1px solid rgba(177, 176, 176, 0.443);
-  border-radius: 5px;
-}
-
-.form-input-field:hover {
-  border: 0.1px solid rgb(64, 157, 238);
-}
-
-input:focus {
-  outline: none;
-  border: 0.1px solid rgb(64, 157, 238);
-}
-
-.form-input-field::placeholder {
-  color: rgba(116, 114, 114, 0.61);
-}
-
-.form-submit-button {
-  cursor: pointer;
-  height: 50px;
-  background-color: #4f7942;
-  color: white;
-  border: none;
-  padding: 5px;
-  width: 40%;
-  margin-left: 30%;
-  margin-top: 20px;
-  border-radius: 5px;
-}
-
-.form-submit-button:hover {
-  background-color: #c1e1c1;
-  color: black;
-}
-
 /* ----------- STYLES TO ORDER HISTORY PAGE ----------- */
 .order-history {
   background-color: white;
@@ -452,16 +383,6 @@ input:focus {
     width: 30%;
   }
 
-  /* Signup Page */
-  .signup-form-container,
-  .login-form-container {
-    width: 60%;
-  }
-  .login-image,
-  .signup-image {
-    width: 30%;
-  }
-
   /* Order-History Page */
   .order-product-card {
     width: 40%;
@@ -496,17 +417,6 @@ input:focus {
     width: 80%;
     padding: 0px;
   }
-
-  /* Signup Page */
-  .signup-form-container,
-  .login-form-container {
-    width: 70%;
-  }
-  .login-image,
-  .signup-image {
-    width: 20%;
-  }
-
   /* Order-History Page */
   .order-history-user {
     width: 100%;
@@ -539,18 +449,6 @@ input:focus {
   }
   .category-button-container {
     width: 90%;
-  }
-
-  /* Signup Page */
-  .signup-form-container,
-  .login-form-container {
-    width: 90%;
-    margin-top: 0px;
-  }
-  .login-image,
-  .signup-image {
-    width: 0%;
-    height: 0px;
   }
 
   /* Success Page */

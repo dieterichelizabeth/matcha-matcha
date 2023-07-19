@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
+import Notification from "../components/Notification";
+import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import NotificationSupport from "../components/NotificationSupport";
+import "./signup.css";
 
 const Signup = () => {
   const [addUser, { error }] = useMutation(ADD_USER);
@@ -55,13 +59,19 @@ const Signup = () => {
 
   return (
     <div>
+      <Notification />
+      <Nav />
+      <hr></hr>
+
       <div className="signup-page">
         <div className="signup-form-container">
-          <h1>Signup</h1>
-          <p className="login-welcome">Welcome! Create a new account</p>
+          <h1>Create Your Account</h1>
+
           <form name="sign-up" onSubmit={handleFormSubmit}>
             {/* First Name Input */}
-            <label htmlFor="firstName">First name</label>
+            <label htmlFor="firstName" className="display-none">
+              First name
+            </label>
             <br />
             <input
               className="form-input-field"
@@ -69,11 +79,14 @@ const Signup = () => {
               id="firstName"
               name="firstName"
               placeholder="Please enter your first name"
+              required
               onChange={handleChange}
             />
             <br />
             {/* Last Name Input */}
-            <label htmlFor="lastName">Last name</label>
+            <label htmlFor="lastName" className="display-none">
+              Last name
+            </label>
             <br />
             <input
               className="form-input-field"
@@ -81,11 +94,14 @@ const Signup = () => {
               id="lastName"
               name="lastName"
               placeholder="Please enter your last name"
+              required
               onChange={handleChange}
             />
             <br />
             {/* Email Input */}
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email" className="display-none">
+              Email
+            </label>
             <br />
             <input
               className="form-input-field"
@@ -93,22 +109,34 @@ const Signup = () => {
               id="email"
               name="email"
               placeholder="Please enter your email address"
+              required
               onChange={handleChange}
             />
             <br />
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password" className="display-none">
+              Password
+            </label>
             <br />
             {/* Password Input */}
             <input
               className="form-input-field"
               type="password"
-              id="myInput"
+              id="password"
               name="password"
               placeholder="Please create a password"
+              required
               onChange={handleChange}
-            />{" "}
+            />
             <br />
-            <input type="checkbox" onClick={showPassword} /> Show Password{" "}
+            {/* Show Password Toggle */}
+            <input
+              type="checkbox"
+              onClick={showPassword}
+              id="showPassword"
+              name="showPassword"
+              className="password-show"
+            />
+            <label htmlFor="showPassword">Show Password</label>
             <br />
             <button className="form-submit-button">Create Account</button>
           </form>
@@ -120,8 +148,22 @@ const Signup = () => {
               </p>
             </div>
           ) : null}
+          <p className="form-disclaimer">
+            Already have an account?{" "}
+            <span>
+              <a href="/login" className="signup-link">
+                Log In Here
+              </a>
+            </span>
+          </p>
+          <p className="form-disclaimer">
+            I agree that my use of this website will be in compliance with the
+            Terms & Conditions.
+          </p>
         </div>
       </div>
+
+      <NotificationSupport />
       <Footer />
     </div>
   );
