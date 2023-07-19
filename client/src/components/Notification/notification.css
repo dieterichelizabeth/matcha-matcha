@@ -9,6 +9,7 @@
 
 .shipping__notification p {
   font-family: "Open Sans", sans-serif;
+  font-display: swap;
   color: #1f1f1f;
   font-size: 0.95rem;
 }

@@ -38,7 +38,13 @@ const Cart = () => {
       const cart = await JSON.parse(
         window.localStorage.getItem("Matcha-Skincare-cart")
       );
-      dispatch({ type: "addMultipleToCart", products: [...cart] });
+
+      // Fix: "Cart is not iterable" error
+      if (cart === null) {
+        return;
+      } else {
+        dispatch({ type: "addMultipleToCart", products: [...cart] });
+      }
     }
 
     if (!store.cart.length) {
@@ -136,7 +142,7 @@ const Cart = () => {
           <div>
             <img
               className="empty-cart-illustration"
-              src={require("../assets/empty-cart.png")}
+              src={require("../../assets/empty-cart.png")}
               alt="Drawing of a person stand next to an empty shopping cart."
             ></img>
             <p>Nothing added to cart yet!</p>

@@ -65,7 +65,7 @@ const Nav = () => {
       <div className="logo--container">
         <div className="logo">
           <img
-            src={require("../assets/logo.png")}
+            src={require("../../assets/logo.png")}
             alt="The company logo is four squares with dots in the middle."
           />
           <a href="/">

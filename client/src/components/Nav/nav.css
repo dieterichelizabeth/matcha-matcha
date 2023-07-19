@@ -4,7 +4,7 @@
 }
 
 .color-2 {
-  color: #6ac889;
+  color: #57a16f;
 }
 
 /* ----------- STYLES TO NAVIGATION BAR ----------- */
@@ -15,7 +15,6 @@
   height: 50px;
   padding-top: 15px;
   padding-bottom: 15px;
-  /* z-index: 10; */
 }
 
 /* Styles to Pages links */
@@ -36,6 +35,7 @@
 
 .nav__main-desktop a {
   font-family: "Headland One", serif;
+  font-display: swap;
   color: #1f1f1f;
   text-decoration: none;
 }
@@ -125,6 +125,7 @@
 .logo a {
   font-size: 2rem;
   font-family: "Economica", sans-serif;
+  font-display: swap;
   letter-spacing: 2.5px;
   text-decoration: none;
 }
@@ -140,6 +141,7 @@
 @media (max-width: 1000px) {
   .logo img {
     height: 40px;
+    width: auto;
   }
   .logo a {
     font-size: 1.5rem;
@@ -236,6 +238,7 @@
   padding: 30px 0;
   font-size: 1.5rem;
   font-family: "Headland One", serif;
+  font-display: swap;
 }
 
 .nav__main-mobile--close-btn-container {

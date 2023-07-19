@@ -1,6 +1,7 @@
 import Notification from "../components/Notification";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import NotificationSupport from "../components/NotificationSupport";
 import "./landing.css";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -44,15 +45,9 @@ const Landing = () => {
           </p>
           <a href="/our-story">OUR STORY</a>
         </div>
-
-        {/* Support Section */}
       </section>
-      <div className="support-snipit__container">
-        <span className="material-symbols-outlined">spa</span>
-        <p>
-          Every Matcha Matcha purchase supports education equality worldwide.
-        </p>
-      </div>
+
+      <NotificationSupport />
       <Footer />
     </>
   );

@@ -1,6 +1,6 @@
 /* Styles to Hero */
 .hero {
-  background-image: url("../components/assets/jacinta-christos-4wO5GON3mg4-unsplash.jpg");
+  background-image: url("../assets/jacinta-christos-4wO5GON3mg4-unsplash.jpg");
   height: 625px;
   width: 100%;
   background-size: 120vw;
@@ -10,7 +10,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    background-image: url("../components/assets/hero-mobile.png");
+    background-image: url("../assets/hero-mobile.png");
     background-position: 0% 22%;
     height: 500px;
   }
@@ -287,23 +287,4 @@
   color: #1f1f1f;
   font-size: 1.7em;
   font-weight: 700;
-}
-
-/* Syltes to Support Snipit */
-.support-snipit__container {
-  background-color: #7a9f79c9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 30px;
-}
-
-.support-snipit__container p {
-  padding: 10px;
-  padding-right: 0px;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  font-family: "Open Sans", sans-serif;
-  color: #1f1f1f;
-  font-size: 0.95rem;
 }

@@ -1,0 +1,126 @@
+/* Styles to About Page */
+.about__page-heading {
+  font-family: "Playfair Display", serif;
+  font-display: swap;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 4px;
+  font-size: 2.5rem;
+  margin-top: 40px;
+}
+
+.about__page-grid-1,
+.about__page-grid-2 {
+  display: grid;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.about__page-grid-1 {
+  grid-template-columns: 0.75fr 1.25fr;
+}
+
+.about__page-grid-2 {
+  grid-template-columns: 1.25fr 0.75fr;
+}
+
+.about__page-grid-1 .grid-item:nth-of-type(1) {
+  order: 2;
+}
+
+.about__page-grid-1 .grid-item:nth-of-type(2) {
+  order: 1;
+}
+
+@media (max-width: 900px) {
+  .about__page-grid-1,
+  .about__page-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about__page-grid-1,
+  .about__page-grid-2 {
+    display: block;
+  }
+}
+
+.about__page-grid-1 h2,
+.about__page-grid-2 h2 {
+  font-size: 28px;
+  line-height: 34px;
+  font-family: "Playfair Display", serif;
+  font-display: swap;
+  color: rgba(0, 0, 0, 0.886);
+  font-size: 1.3rem;
+  width: 100%;
+  letter-spacing: 2px;
+}
+
+.about__page-grid-1 p,
+.about__page-grid-2 p {
+  font-family: "Headland One", serif;
+  font-display: swap;
+  color: rgba(0, 0, 0, 0.886);
+  font-size: 0.87rem;
+  letter-spacing: 1px;
+}
+
+.about__page-grid-1 a,
+.about__page-grid-2 a {
+  color: rgba(0, 0, 0, 0.886);
+  letter-spacing: 2px;
+  font-family: "Darker Grotesque", sans-serif;
+  font-display: swap;
+  font-size: 1rem;
+}
+
+.about__page-grid-1 img,
+.about__page-grid-2 img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .about__page-grid-1 img,
+  .about__page-grid-2 img {
+    height: 300px;
+  }
+}
+
+.greyscale {
+  filter: grayscale(100%);
+}
+
+.grid-item {
+  grid-row: 1;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .about__page-grid-1,
+  .about__page-grid-2 {
+    max-width: 440px;
+    padding: 40px 0px;
+  }
+  .grid-item {
+    padding: 0px 30px;
+  }
+
+  .about__page-grid-1 h2,
+  .about__page-grid-2 h2 {
+    font-size: 1.3rem;
+  }
+
+  .about__page-grid-1 p,
+  .about__page-grid-2 p {
+    font-size: 1rem;
+  }
+}
