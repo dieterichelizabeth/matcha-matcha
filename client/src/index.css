@@ -12,57 +12,6 @@ code {
     monospace;
 }
 
-/* ----------- STYLES TO WELCOME MODAL ----------- */
-.welcome-modal {
-  position: fixed;
-  top: 30px;
-  width: 60%;
-  height: 500px;
-  margin-left: 20%;
-
-  background-image: url("./assets/welcome-modal.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  border-radius: 20px;
-  box-shadow: 2px 2px 4px rgba(230, 214, 173, 0.357);
-  padding: 20px;
-}
-
-.welcome-modal button {
-  background-color: #eeeeee7d;
-  border: #eeeeeed4;
-  border-radius: 5px;
-  font-size: 30px;
-}
-
-.welcome-modal button:hover {
-  background-color: #dad9d995;
-  cursor: pointer;
-}
-
-.welcome-modal h2 {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-style: italic;
-  font-size: 30px;
-  color: #7f6000;
-  text-align: center;
-}
-
-.welcome-modal p {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  font-size: 20px;
-  color: #657234;
-  width: 60%;
-  margin-left: 20%;
-}
-
-.display-none {
-  display: none;
-}
-
 /* ----------- STYLES TO HOMEPAGE ----------- */
 .home-description {
   margin: 20px 0px 0px 40px;
@@ -498,10 +447,6 @@ input:focus {
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 /* applied on any screen smaller than 980px */
 @media screen and (max-width: 980px) {
-  .welcome-modal p {
-    font-size: 18px;
-  }
-
   /* Catalog Page */
   .product-card {
     width: 30%;
@@ -526,18 +471,6 @@ input:focus {
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
 /* applied on any screen between 768px and 575px */
 @media screen and (max-width: 768px) {
-  .welcome-modal {
-    background-image: url("./assets/welcome-modal-sm.png");
-  }
-  .welcome-modal h2 {
-    padding-top: 30px;
-  }
-  .welcome-modal p {
-    width: 80%;
-    margin-left: 10%;
-    font-size: 16px;
-  }
-
   /* Catalog Page */
   .product-card {
     width: 40%;
@@ -600,15 +533,6 @@ input:focus {
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 /* applied on any screen smaller than 575px */
 @media screen and (max-width: 575px) {
-  .welcome-modal h2 {
-    padding-top: 60px;
-    font-size: 25px;
-  }
-  .welcome-modal p {
-    width: 96%;
-    margin-left: 2%;
-    font-size: 14px;
-  }
   /* Catalog Page */
   .product-card {
     width: 70%;

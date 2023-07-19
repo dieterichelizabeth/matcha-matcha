@@ -2,6 +2,7 @@ import Notification from "../components/Notification";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import NotificationSupport from "../components/NotificationSupport";
+import Welcome from "../components/Welcome";
 import "./landing.css";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,7 +17,7 @@ const Landing = () => {
     <>
       <Notification />
       <Nav />
-
+      <Welcome />
       {/* Hero */}
       <div className="hero">
         <div className="hero__msg-container">
