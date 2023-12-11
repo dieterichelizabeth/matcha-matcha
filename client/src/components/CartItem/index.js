@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { chakra, Flex, Text, Button, Stack, Image } from "@chakra-ui/react";
 import {
   removeFromLocalCart,
   updateLocalCartQty,
@@ -44,36 +45,46 @@ const CartItem = ({ item }) => {
   };
 
   return (
-    <div className="cart-item-container">
-      <img
-        className="cart-item-image"
-        src={`/images/${item.image}`}
+    <Flex alignItems={"center"} margin={"10px"}>
+      <Image
+        src={`/assets/small/${item.image}`}
         alt={item.name}
+        height={"80px"}
+        width={"80px"}
+        objectFit={"cover"}
+        marginRight={"10px"}
       />
-      <div className="cart-item-description">
-        <p className="cart-item-name">{item.name}</p>
+      <Stack gap={"0"}>
+        <Text>{item.name}</Text>
 
-        <div className="cart-item-spacing">
-          <p className="cart-item-price">${item.price}</p>
-          <div className="cart-item-spacing w100">
-            <p className="cart-item-price">Qty: </p>
-            <input
-              className="cart-item-qty-input"
+        <Flex justifyContent={"space-between"} marginBottom={"0"}>
+          <Text>${item.price}</Text>
+          <Flex alignItems={"center"}>
+            <Text marginRight={"7px"}>Qty: </Text>
+            <chakra.input
+              width={"20px"}
+              padding={"2px"}
+              border={"1px solid #EDF2F7"}
               type="number"
               placeholder="1"
               value={item.purchaseQuantity}
               onChange={updateQuantity}
             />
-          </div>
-        </div>
-        <button
-          className="cart-item-remove"
+          </Flex>
+        </Flex>
+        <Button
+          marginTop={"0"}
+          fontSize={"13px"}
+          height={"25px"}
+          width={"65px"}
+          bg={"transparent"}
+          textDecor={"underline"}
           onClick={() => removeFromCart(item)}
         >
           Remove
-        </button>
-      </div>
-    </div>
+        </Button>
+      </Stack>
+    </Flex>
   );
 };
 

@@ -5,6 +5,19 @@ import { QUERY_CHECKOUT } from "../../utils/queries";
 import { useLazyQuery } from "@apollo/client";
 import Auth from "../../utils/auth";
 import { loadStripe } from "@stripe/stripe-js";
+import { BsCart4 } from "react-icons/bs";
+import { Link as MyLink } from "react-router-dom";
+import {
+  Flex,
+  Text,
+  Button,
+  Stack,
+  Image,
+  Menu,
+  MenuButton,
+  MenuList,
+} from "@chakra-ui/react";
+import cart from "../../components/assets/cart.png";
 
 // Stripe test key for development from Stripe documentation
 // DO NOT INPUT SENSATIVE INFORMATION WITH THIS PUBLIC KEY
@@ -85,66 +98,89 @@ const Cart = () => {
   // Display the cart icon when the shopping cart is closed
   if (!store.cartOpen) {
     return (
-      <div className="cart" onClick={toggleCart}>
-        <p>
-          <span className="material-symbols-outlined">shopping_bag</span>
-        </p>
-      </div>
+      <Button
+        fontSize={"sm"}
+        fontWeight={600}
+        color={"green.800"}
+        bg={"transparent"}
+        _hover={{
+          bg: "gray.50",
+        }}
+        onClick={toggleCart}
+      >
+        <BsCart4 />
+      </Button>
     );
   }
 
   // If the user is logged in, allow them to proceed to Stripe's checkout page
   const checkoutButtons = (
-    <div>
+    <>
       {Auth.loggedIn() ? (
-        <button onClick={submitCheckout} className="checkout-button">
-          CHECKOUT
-        </button>
+        <Button onClick={submitCheckout}>CHECKOUT</Button>
       ) : (
-        <button className="checkout-button">
-          <a href="/login">Login to Checkout</a>
-        </button>
+        <MyLink to={"/login"}>
+          <Button>Login to Checkout</Button>
+        </MyLink>
       )}
-    </div>
+    </>
   );
 
   return (
-    <div className="shopping-cart-open">
-      <div className="shopping-cart-close-button" onClick={toggleCart}>
-        [close]
-      </div>
-
-      {/* Cart Items */}
-      <div className="cart-contents">
+    <Menu>
+      <MenuButton
+        as={Button}
+        rounded={"full"}
+        variant={"link"}
+        cursor={"pointer"}
+        minW={0}
+      >
+        <Button
+          fontSize={"sm"}
+          fontWeight={600}
+          color={"green.800"}
+          bg={"transparent"}
+          _hover={{
+            bg: "gray.50",
+          }}
+          onClick={toggleCart}
+        >
+          <BsCart4 />
+        </Button>
+      </MenuButton>
+      <MenuList alignItems={"center"} padding={"20px"}>
         {store.cart[0] ? (
           <div>
-            {store.cart.map((item) => (
-              <CartItem key={item.name} item={item} />
+            {store.cart.map((item, i) => (
+              <CartItem key={i} item={item} />
             ))}
             {/* Cart Subtotal Display */}
             <hr></hr>
-            <div className="cart-open-amount-container">
-              <p className="cart-open-total">CART SUBTOTAL: </p>
-              <p>${calculateTotal()}</p>
-            </div>
+            <Flex justifyContent={"space-between"}>
+              <Text>CART SUBTOTAL: </Text>
+              <Text>${calculateTotal()}</Text>
+            </Flex>
             <hr></hr>
 
-            {checkoutButtons}
+            <Stack marginTop={"20px"}>{checkoutButtons}</Stack>
           </div>
         ) : (
-          <div>
-            <img
-              className="empty-cart-illustration"
-              src={require("../assets/empty-cart.png")}
-              alt="Drawing of a person stand next to an empty shopping cart."
-            ></img>
-            <p>Nothing added to cart yet!</p>
+          <Stack>
+            <Image
+              src={cart}
+              height={"40px"}
+              width={"40px"}
+              margin={"auto"}
+            ></Image>
+            <Text>Nothing added to cart yet!</Text>
 
-            {checkoutButtons}
-          </div>
+            <MyLink to={"/shop"}>
+              <Button>Continue Shopping</Button>
+            </MyLink>
+          </Stack>
         )}
-      </div>
-    </div>
+      </MenuList>
+    </Menu>
   );
 };
 

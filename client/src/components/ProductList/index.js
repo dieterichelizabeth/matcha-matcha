@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import ProductItem from "../ProductItem";
+import ProductCard from "../ProductCard";
 import { useQuery } from "@apollo/client";
 import { QUERY_ALL_PRODUCTS } from "../../utils/queries";
 import { useSelector, useDispatch } from "react-redux";
+import { SimpleGrid } from "@chakra-ui/react";
 
 const ProductList = () => {
   // Access and interact with the Redux Store
@@ -36,11 +38,11 @@ const ProductList = () => {
   }
 
   return (
-    <div className="product-results-container">
+    <SimpleGrid minChildWidth="200px" spacing={10}>
       {store.products[0] ? (
         <>
           {filterProducts().map((product) => (
-            <ProductItem
+            <ProductCard
               key={product._id}
               _id={product._id}
               description={product.description}
@@ -55,7 +57,7 @@ const ProductList = () => {
       )}
 
       {loading ? <p>loading</p> : null}
-    </div>
+    </SimpleGrid>
   );
 };
 

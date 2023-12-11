@@ -12,12 +12,14 @@ import store from "./utils/store";
 
 // ------ Components/Pages ------ //
 import Nav from "./components/Nav";
-import Home from "./pages/Home";
-import Detail from "./pages/Detail";
-import Login from "./pages/Login";
-import NoMatch from "./pages/NoMatch";
-import OrderHistory from "./pages/OrderHistory";
-import Signup from "./pages/Signup";
+import Home from "./pages/Home/index";
+import Shop from "./pages/Shop/index";
+import Blog from "./pages/Blog/index";
+import ProductPage from "./pages/ProductPage";
+import Login from "./pages/Login/index";
+import NoMatch from "./pages/NoMatch/index";
+import OrderHistory from "./pages/OrderHistory/index";
+import Signup from "./pages/Signup/index";
 import Success from "./pages/Success";
 
 // ---------------------------- Apollo/Graphql Setup ----------------------------- //
@@ -62,10 +64,12 @@ function App() {
               <Nav />
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/shop" element={<Shop />} />
+                <Route path="/blog" element={<Blog />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/orderHistory" element={<OrderHistory />} />
-                <Route path="/products/:id" element={<Detail />} />
+                <Route path="/products/:id" element={<ProductPage />} />
                 <Route path="/success" element={<Success />} />
                 <Route path="*" element={<NoMatch />} />
               </Routes>

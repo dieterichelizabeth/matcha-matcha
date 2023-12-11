@@ -12,6 +12,25 @@ code {
     monospace;
 }
 
+section {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+main {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.page {
+  min-height: 40vh;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #2d3748 !important;
+}
 /* ----------- STYLES TO WELCOME MODAL ----------- */
 .welcome-modal {
   position: fixed;
