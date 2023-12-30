@@ -107,6 +107,7 @@ const Cart = () => {
           bg: "gray.50",
         }}
         onClick={toggleCart}
+        aria-label="Open The Cart"
       >
         <BsCart4 />
       </Button>

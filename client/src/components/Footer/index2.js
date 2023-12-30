@@ -21,7 +21,12 @@ export default function SmallCentered() {
         align={"center"}
         color={"yellow.50"}
       >
-        <Image src={logoSm} height={"25px"} width={"25px"}></Image>
+        <Image
+          src={logoSm}
+          height={"25px"}
+          width={"25px"}
+          alt="A white sprouting seedling (Company Logo)"
+        ></Image>
         <Stack direction={"row"} spacing={6}>
           <Link href={"/"}>Home</Link>
           <Link href={"/our-story"}>Our Story</Link>

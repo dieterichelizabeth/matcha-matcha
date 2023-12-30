@@ -64,7 +64,12 @@ export default function WithSubnavigation() {
           alignItems={"center"}
         >
           <MyLink to={"/"}>
-            <Image src={navLogo} width={"160px"}></Image>
+            <Image
+              src={navLogo}
+              width={"160px"}
+              alt="Matcha Plant Co. Logo"
+              aria-label="Home Button"
+            ></Image>
           </MyLink>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -117,6 +122,7 @@ export default function WithSubnavigation() {
                 fontWeight={400}
                 variant={"link"}
                 display={{ base: "none", md: "inline-flex" }}
+                color={"gray.600"}
               >
                 Sign In
               </Button>

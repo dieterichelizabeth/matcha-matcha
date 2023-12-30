@@ -69,10 +69,9 @@ const BestSellerCards = () => {
       {store.products[0] ? (
         <>
           {filterProducts().map((product) => (
-            <SwiperSlide>
+            <SwiperSlide key={product._id}>
               {" "}
               <ProductCard
-                key={product._id}
                 _id={product._id}
                 description={product.description}
                 image={product.image}
