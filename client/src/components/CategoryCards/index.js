@@ -1,5 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 import {
   SimpleGrid,
   Card,
@@ -8,36 +7,30 @@ import {
   Stack,
   Heading,
 } from "@chakra-ui/react";
-
 import { useNavigate } from "react-router-dom";
-
-// TODO: Get this info from the db
+import { useQuery } from "@apollo/client";
+import { QUERY_CATEGORIES } from "../../utils/queries";
+import { useSelector, useDispatch } from "react-redux";
 
 const CategoryCards = () => {
   const navigate = useNavigate();
 
-  const categories = [
-    {
-      _id: "657585be8737d1d8cda94f69",
-      name: "Best Sellers",
-      image: "best-sellers.jpg",
-    },
-    {
-      _id: "657585be8737d1d8cda94f6a",
-      name: "Bright Light",
-      image: "bright-light.jpg",
-    },
-    {
-      _id: "657585be8737d1d8cda94f6b",
-      name: "Low Maintanence",
-      image: "low-maintanence.jpg",
-    },
-    {
-      _id: "657585be8737d1d8cda94f6c",
-      name: "Pet Friendly",
-      image: "pet-friendly.jpg",
-    },
-  ];
+  // Access and interact with the Redux Store
+  const dispatch = useDispatch();
+  const store = useSelector((state) => state);
+
+  // On page load, attempt to gather "category names" from the Database
+  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
+
+  // Once the "category names" return from the database, add them to the Redux Store.
+  useEffect(() => {
+    if (categoryData) {
+      dispatch({
+        type: "updateCategories",
+        categories: categoryData.categories,
+      });
+    }
+  }, [categoryData, loading, dispatch]);
 
   const handleClick = (id) => {
     localStorage.setItem("categoryId", JSON.stringify(id));
@@ -91,7 +84,7 @@ const CategoryCards = () => {
 
   return (
     <SimpleGrid minChildWidth="200px" spacing={10} marginTop={"40px"}>
-      {categories.map((category) => (
+      {store.categories.map((category) => (
         <CategoryCard
           key={category._id}
           _id={category._id}
