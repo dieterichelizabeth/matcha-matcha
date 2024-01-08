@@ -29,7 +29,6 @@ function CategoryMenu() {
   // Use redux store to display current category name.
   const categoryName = getName();
   function getName() {
-    console.log(store);
     if (store.currentCategory) {
       const id = store.currentCategory;
       const category = store.categories.find((category) => category._id === id);

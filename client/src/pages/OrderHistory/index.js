@@ -74,7 +74,7 @@ const OrderHistory = () => {
                         <hr></hr>
                         <Stack marginBottom={"20px"} marginTop={"20px"}>
                           {order.products.map(({ name, price, _id }, index) => (
-                            <Flex alignItems={"center"}>
+                            <Flex alignItems={"center"} key={index}>
                               <Text marginRight={"10px"}>
                                 <chakra.span fontSize={"10px"}>X</chakra.span>1
                               </Text>

@@ -38,7 +38,6 @@ const CategoryCards = () => {
 
   const handleClick = (id) => {
     localStorage.setItem("categoryId", JSON.stringify(id));
-    console.log(id);
 
     navigate("/shop");
   };
