@@ -2,8 +2,6 @@
 
 Matcha-Matcha Skincare is an e-commerce platform selling skincare and tea products. 🌻
 
-View the [Deployed Application](https://blooming-peak-73826.herokuapp.com/)
-
 Users can browse through products on the Homepage, and click on a product card to open the Details page (which contains additional information such as ingredients and benefits). Users can add and remove products to their cart, as well as update the quantity. Users must be logged in to proceed to checkout. Once a user is logged in, they may checkout using the Stripe Payment service. On completion, they are shown a success screen and are redirected to the Homepage. Users can view their previous orders under the “Orders” tab in the navber.
 
 At this time, the Stripe payment service uses a test key. Input of sensitive information is not secure. Here is a list of [Test Cards](https://stripe.com/docs/testing) from Stripe's Docs.
@@ -18,13 +16,7 @@ This project uses Redux for State Management, Local Storage for user input persi
 
 ## Screenshots
 
-Catalog Homepage with products displayed
-
-![Screen Shot 2022-08-04 at 5 47 03 PM](https://user-images.githubusercontent.com/95142863/183228374-3241b297-63b3-4cf9-9e13-f8218f58222b.png)
-
-Mobile Details Page with cart open
-
-![Screen Shot 2022-08-04 at 5 47 28 PM](https://user-images.githubusercontent.com/95142863/183228380-b0755607-d4ba-4924-82bc-c0105ce8d395.png)
+<img width="1403" alt="Screenshot 2024-01-08 at 5 23 42 AM" src="https://github.com/dieterichelizabeth/matcha-matcha/assets/95142863/5c64d042-fbb7-4dd9-86d8-c7e57c5c03a3">
 
 ## Installation
 

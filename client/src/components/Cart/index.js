@@ -15,7 +15,9 @@ import cart from "../../components/assets/cart.png";
 
 // Stripe test key for development from Stripe documentation
 // DO NOT INPUT SENSATIVE INFORMATION WITH THIS PUBLIC KEY
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_FRONT);
+const stripePromise = loadStripe(
+  "pk_test_51NjrI7DSKGaJZlGB0akWojpo4H0lkIi1Z5AA70196poSGbDs3hnuLw9EOwd6bh18CfYM3inYRM4eQdkGFMIEvsC000puTkXyqb"
+);
 
 const Cart = () => {
   // Access and interact with the Redux Store

@@ -4,7 +4,9 @@ const { signToken } = require("../utils/auth");
 
 // Stripe test key for development from Stripe documentation
 // DO NOT INPUT SENSATIVE INFORMATION WITH THIS PUBLIC KEY
-const stripe = require("stripe")(process.env.STRIPE_THING);
+const stripe = require("stripe")(
+  "sk_test_51NjrI7DSKGaJZlGBYTXttrAUQ1E953Mf7X3k3OuDlQ7mhF5aOKmACHaSy1RTqM8nxEpsQrEZJG2jjYyUT66qFjU400MSJv2hul"
+);
 
 const resolvers = {
   Query: {
@@ -72,7 +74,7 @@ const resolvers = {
         const product = await stripe.products.create({
           name: products[i].name,
           description: products[i].description,
-          images: [`${url}/images/${products[i].image}`],
+          // images: [`${url}/assets/small/${products[i].image}`],
         });
 
         // generate price id using the product id
