@@ -22,6 +22,7 @@ import Signup from "./pages/Signup/index";
 import Success from "./pages/Success";
 import OurStory from "./pages/OurStory";
 import Contact from "./pages/Contact";
+import Seed from "./pages/Seed";
 
 // ------ Blog Pages ------ //
 import Blog from "./pages/Blog/index";
@@ -91,6 +92,7 @@ function App() {
                 <Route path="/success" element={<Success />} />
                 <Route path="/our-story" element={<OurStory />} />
                 <Route path="/contact-us" element={<Contact />} />
+                <Route path="/DyIaZB3jO1X5ZL/seed" element={<Seed />} />
                 <Route path="*" element={<NoMatch />} />
               </Routes>
             </div>

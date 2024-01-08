@@ -77,3 +77,11 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+export const QUERY_SEEDS = gql`
+  query DyIaZB3jO1X5ZL {
+    DyIaZB3jO1X5ZL {
+      _id
+    }
+  }
+`;
