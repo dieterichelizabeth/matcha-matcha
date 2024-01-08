@@ -29,10 +29,13 @@ const productSchema = new Schema({
     ref: "Category",
     required: true,
   },
-  ingredients: {
+  details: {
     type: String,
   },
   benefits: {
+    type: String,
+  },
+  care: {
     type: String,
   },
 });

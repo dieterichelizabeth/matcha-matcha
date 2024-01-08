@@ -12,13 +12,23 @@ import store from "./utils/store";
 
 // ------ Components/Pages ------ //
 import Nav from "./components/Nav";
-import Home from "./pages/Home";
-import Detail from "./pages/Detail";
-import Login from "./pages/Login";
-import NoMatch from "./pages/NoMatch";
-import OrderHistory from "./pages/OrderHistory";
-import Signup from "./pages/Signup";
+import Home from "./pages/Home/index";
+import Shop from "./pages/Shop/index";
+import ProductPage from "./pages/ProductPage";
+import Login from "./pages/Login/index";
+import NoMatch from "./pages/NoMatch/index";
+import OrderHistory from "./pages/OrderHistory/index";
+import Signup from "./pages/Signup/index";
 import Success from "./pages/Success";
+import OurStory from "./pages/OurStory";
+import Contact from "./pages/Contact";
+
+// ------ Blog Pages ------ //
+import Blog from "./pages/Blog/index";
+import Blog1 from "./pages/Blog/blog1";
+import Blog2 from "./pages/Blog/blog2";
+import Blog3 from "./pages/Blog/blog3";
+import Blog4 from "./pages/Blog/blog4";
 
 // ---------------------------- Apollo/Graphql Setup ----------------------------- //
 // Middleware - establish a new link to the GraphQL server at its "/graphql" endpoint
@@ -62,11 +72,25 @@ function App() {
               <Nav />
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/shop" element={<Shop />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/Common-Plant-Care-Mistakes" element={<Blog1 />} />
+                <Route
+                  path="/Plant-Care-Guide-for-Beginners"
+                  element={<Blog2 />}
+                />
+                <Route path="/Battling-Yellow-Leaves" element={<Blog3 />} />
+                <Route
+                  path="/Increasing-Humidity-for-Your-Plants"
+                  element={<Blog4 />}
+                />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/orderHistory" element={<OrderHistory />} />
-                <Route path="/products/:id" element={<Detail />} />
+                <Route path="/products/:id" element={<ProductPage />} />
                 <Route path="/success" element={<Success />} />
+                <Route path="/our-story" element={<OurStory />} />
+                <Route path="/contact-us" element={<Contact />} />
                 <Route path="*" element={<NoMatch />} />
               </Routes>
             </div>

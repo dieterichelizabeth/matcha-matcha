@@ -1,0 +1,11 @@
+.productCard:hover h2 {
+  text-decoration: underline;
+}
+.productCard img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+.productCard svg {
+  color: #22543d;
+}
