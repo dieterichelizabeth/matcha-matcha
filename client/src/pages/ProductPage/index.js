@@ -19,8 +19,6 @@ import {
   SimpleGrid,
   StackDivider,
   useColorModeValue,
-  List,
-  ListItem,
 } from "@chakra-ui/react";
 import { MdLocalShipping } from "react-icons/md";
 
@@ -100,11 +98,24 @@ const Detail = () => {
     }
   };
 
+  const GetProductDetails = () => {
+    if (product.details) {
+      const detailsArr = product.details.split(",");
+      return (
+        <>
+          {detailsArr.map((detail, i) => (
+            <DeatailIcons detail={detail} key={i} />
+          ))}
+        </>
+      );
+    } else return <></>;
+  };
+
   return (
     <div>
       {Breadcrumb}
 
-      <Container maxW={"7xl"}>
+      <Container maxW={"7xl"} marginBottom={"100px"}>
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
           spacing={{ base: 8, md: 10 }}
@@ -112,15 +123,19 @@ const Detail = () => {
         >
           {/* Product Images */}
           <Flex>
-            <Image
-              rounded={"md"}
-              alt={"product image"}
-              src={`/assets/${product.image}`}
-              fit={"cover"}
-              align={"center"}
-              w={"100%"}
-              h={{ base: "100%", sm: "400px", lg: "500px" }}
-            />
+            {product.image ? (
+              <Image
+                rounded={"md"}
+                alt={"product image"}
+                src={`/assets/${product.image}`}
+                fit={"cover"}
+                align={"center"}
+                w={"100%"}
+                h={{ base: "100%", sm: "400px", lg: "500px" }}
+              />
+            ) : (
+              <></>
+            )}
           </Flex>
 
           {/* Product Text */}
@@ -156,9 +171,6 @@ const Detail = () => {
                 <Text color={"green.800"} fontSize={"xl"} fontWeight={"300"}>
                   {product.description}
                 </Text>
-                <Text fontSize={"lg"} color={"gray.600"}>
-                  {product.benefits} {product.ingredients}
-                </Text>
               </VStack>
 
               {/* Detail Icons */}
@@ -173,7 +185,11 @@ const Detail = () => {
                   Details
                 </Text>
 
-                <DeatailIcons />
+                <Stack>
+                  <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+                    <GetProductDetails />
+                  </SimpleGrid>
+                </Stack>
               </Box>
 
               {/* Product Details */}
@@ -188,51 +204,9 @@ const Detail = () => {
                   Care Guide
                 </Text>
 
-                <List spacing={2}>
-                  <ListItem>
-                    <Text as={"span"} fontWeight={"bold"}>
-                      Between lugs:
-                    </Text>{" "}
-                    20 mm
-                  </ListItem>
-                  <ListItem>
-                    <Text as={"span"} fontWeight={"bold"}>
-                      Bracelet:
-                    </Text>{" "}
-                    leather strap
-                  </ListItem>
-                  <ListItem>
-                    <Text as={"span"} fontWeight={"bold"}>
-                      Case:
-                    </Text>{" "}
-                    Steel
-                  </ListItem>
-                  <ListItem>
-                    <Text as={"span"} fontWeight={"bold"}>
-                      Case diameter:
-                    </Text>{" "}
-                    42 mm
-                  </ListItem>
-                  <ListItem>
-                    <Text as={"span"} fontWeight={"bold"}>
-                      Dial color:
-                    </Text>{" "}
-                    Black
-                  </ListItem>
-                  <ListItem>
-                    <Text as={"span"} fontWeight={"bold"}>
-                      Crystal:
-                    </Text>{" "}
-                    Domed, scratch‑resistant sapphire crystal with
-                    anti‑reflective treatment inside
-                  </ListItem>
-                  <ListItem>
-                    <Text as={"span"} fontWeight={"bold"}>
-                      Water resistance:
-                    </Text>{" "}
-                    5 bar (50 metres / 167 feet){" "}
-                  </ListItem>
-                </List>
+                <Text fontSize={"lg"} color={"gray.600"}>
+                  {product.benefits}
+                </Text>
               </Box>
             </Stack>
 
@@ -243,8 +217,8 @@ const Detail = () => {
               mt={8}
               size={"lg"}
               py={"7"}
-              bg={useColorModeValue("gray.900", "gray.50")}
-              color={useColorModeValue("white", "gray.900")}
+              bg={useColorModeValue("blue.800", "gray.50")}
+              color={useColorModeValue("yellow.50", "gray.900")}
               textTransform={"uppercase"}
               _hover={{
                 transform: "translateY(2px)",

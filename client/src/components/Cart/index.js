@@ -10,16 +10,7 @@ import Auth from "../../utils/auth";
 import { loadStripe } from "@stripe/stripe-js";
 import { BsCart4 } from "react-icons/bs";
 import { Link as MyLink } from "react-router-dom";
-import {
-  Flex,
-  Text,
-  Button,
-  Stack,
-  Image,
-  Menu,
-  MenuButton,
-  MenuList,
-} from "@chakra-ui/react";
+import { Flex, Text, Button, Stack, Image } from "@chakra-ui/react";
 import cart from "../../components/assets/cart.png";
 
 // Stripe test key for development from Stripe documentation
@@ -131,28 +122,32 @@ const Cart = () => {
   );
 
   return (
-    <Menu>
-      <MenuButton
-        as={Button}
-        rounded={"full"}
-        variant={"link"}
-        cursor={"pointer"}
-        minW={0}
+    <Stack>
+      <Button
+        fontSize={"sm"}
+        fontWeight={600}
+        color={"green.800"}
+        bg={"transparent"}
+        _hover={{
+          bg: "gray.50",
+        }}
+        onClick={toggleCart}
+        aria-label="Open The Cart"
       >
-        <Button
-          fontSize={"sm"}
-          fontWeight={600}
-          color={"green.800"}
-          bg={"transparent"}
-          _hover={{
-            bg: "gray.50",
-          }}
-          onClick={toggleCart}
-        >
-          <BsCart4 />
-        </Button>
-      </MenuButton>
-      <MenuList alignItems={"center"} padding={"20px"}>
+        <BsCart4 />
+      </Button>
+      <Stack
+        position={"absolute"}
+        right={"0"}
+        top={"80px"}
+        alignItems={"center"}
+        bg={"white"}
+        padding={"20px 10px"}
+        border={"1px solid"}
+        borderColor={"gray.200"}
+        zIndex={"4"}
+        maxW={"400px"}
+      >
         {store.cart[0] ? (
           <div>
             {store.cart.map((item, i) => (
@@ -183,8 +178,8 @@ const Cart = () => {
             </MyLink>
           </Stack>
         )}
-      </MenuList>
-    </Menu>
+      </Stack>
+    </Stack>
   );
 };
 

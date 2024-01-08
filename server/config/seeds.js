@@ -37,15 +37,13 @@ db.once("open", async () => {
       description:
         "The Ficus Elastica is known for its thick, glossy leaves and latex sap that was once used in rubber production! This same sap makes the Ficus elastica toxic, so the best practice is to keep it out of the reach of curious pets and small children. Give your Rubber tree plenty of bright indirect light to help it retain its dramatic foliage.",
       image: "feey-17UXXzGF7RA-unsplash.jpg",
-      category: categories[0]._id,
       price: 22.99,
       quantity: 500,
+      category: categories[0]._id,
       details:
         "Difficulty: Moderate, Light: Partial/Bright Indirect, Air Cleaner",
-      ingredients:
-        "Water every 1-2 weeks allowing soil to dry out between waterings. Expect to water more often in brighter light conditions and less often in lower light.",
-      benefits:
-        "Helps soothe irritated skin. Calms redness and irritation. Restores radiance. Leaves skin feeling refreshed. Reduces fine lines and wrinkles. Contains Vitamin E and Hyaluronic Acid.",
+      benefits: "",
+      care: "Water every 1-2 weeks allowing soil to dry out between waterings. Expect to water more often in brighter light conditions and less often in lower light.",
     },
     {
       name: "Satin Pothos || Scindapsus pictus",

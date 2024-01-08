@@ -4,40 +4,14 @@
  */
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Card,
-  CardBody,
-  Image,
-  Stack,
-  Heading,
-  Text,
-  Box,
-} from "@chakra-ui/react";
-import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
+import { Card, CardBody, Image, Stack, Heading, Text } from "@chakra-ui/react";
+
 import "./index.css";
 
 const ProductCard = (product) => {
-  const Rating = ({ rating, numReviews }) => {
-    return (
-      <Box display={"flex"} alignItems="center">
-        {Array(5)
-          .fill("")
-          .map((_, i) => {
-            const roundedRating = Math.round(rating * 2) / 2;
-            if (roundedRating - i >= 1) {
-              return <BsStarFill key={i} style={{ marginLeft: "1" }} />;
-            }
-            if (roundedRating - i === 0.5) {
-              return <BsStarHalf key={i} style={{ marginLeft: "1" }} />;
-            }
-            return <BsStar key={i} style={{ marginLeft: "1" }} />;
-          })}
-        <Box as="span" ml="2" color="gray.600" fontSize="sm">
-          ({numReviews})
-        </Box>
-      </Box>
-    );
-  };
+  const descriptionArr = product.description.split(" ");
+  const description = descriptionArr.slice(0, 15);
+  const text = description.join(" ");
 
   return (
     <Link to={`/products/${product._id}`} className="productCard">
@@ -60,8 +34,8 @@ const ProductCard = (product) => {
             <Heading color="green.800" size="sm" fontWeight={500}>
               {product.name}
             </Heading>
-            {/* <Text>{product.description}</Text> */}
-            <Rating rating={4} numReviews={10} />
+            <Text>{text}...</Text>
+
             <Text color="green.800" fontSize="xl">
               ${product.price}
             </Text>
