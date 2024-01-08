@@ -1,5 +1,4 @@
 import {
-  chakra,
   Container,
   Stack,
   Flex,
@@ -41,7 +40,7 @@ export default function OurStory() {
                   zIndex: -1,
                 }}
               >
-                Our Mission is a little more green.
+                Our Mission is to give more green.
               </Text>
             </Heading>
             <Text color={"gray.800"}>

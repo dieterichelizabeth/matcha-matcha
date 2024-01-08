@@ -28,7 +28,7 @@ export default function GuidesAndResources() {
               View Plant Care Guides
             </Text>
           </Link>
-          <Link href={"/Contact-us"}>
+          <Link href={"/contact-us"}>
             <Text decoration={"underline"} color={"green.800"}>
               Contact Us for a Plant Health Consultation
             </Text>

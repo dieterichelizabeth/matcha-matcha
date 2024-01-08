@@ -31,7 +31,7 @@ export default function SmallCentered() {
           <Link href={"/"}>Home</Link>
           <Link href={"/our-story"}>Our Story</Link>
           <Link href={"/blog"}>Blog</Link>
-          <Link href={"/contact"}>Contact Us</Link>
+          <Link href={"/contact-us"}>Contact Us</Link>
         </Stack>
       </Container>
 
