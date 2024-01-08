@@ -1,3 +1,7 @@
+/**
+ * Product Card component - used for displaying product on the Homepage and "Shop" page.
+ * @param {product} arg An object containing product information for display
+ */
 import React from "react";
 import { Link } from "react-router-dom";
 import {

@@ -1,3 +1,7 @@
+/**
+ * "Offers" Section copmonent
+ * used on the "Shop" page (3 cards below the products)
+ */
 import React from "react";
 import { SimpleGrid, Image, Text, Stack, Flex } from "@chakra-ui/react";
 import shippingImg from "../assets/vadim-kaipov-tZE2tTDQ6Zo-unsplash.webp";

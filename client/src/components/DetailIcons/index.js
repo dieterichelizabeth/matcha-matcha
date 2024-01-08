@@ -1,3 +1,8 @@
+/**
+ * Detail Icons component
+ * @param {details} arg An object containing plant attributes for display
+ * returns "plant detail badges" for display
+ */
 import React, { useState } from "react";
 import { Stack, Text, Icon, Flex, SimpleGrid } from "@chakra-ui/react";
 import { GiNightSleep, GiPlantRoots } from "react-icons/gi";

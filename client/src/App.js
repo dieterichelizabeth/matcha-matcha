@@ -14,17 +14,19 @@ import store from "./utils/store";
 import Nav from "./components/Nav";
 import Home from "./pages/Home/index";
 import Shop from "./pages/Shop/index";
-import Blog from "./pages/Blog/index";
-import Blog1 from "./pages/Blog/blog1";
-import Blog2 from "./pages/Blog/blog2";
-import Blog3 from "./pages/Blog/blog3";
-import Blog4 from "./pages/Blog/blog4";
 import ProductPage from "./pages/ProductPage";
 import Login from "./pages/Login/index";
 import NoMatch from "./pages/NoMatch/index";
 import OrderHistory from "./pages/OrderHistory/index";
 import Signup from "./pages/Signup/index";
 import Success from "./pages/Success";
+
+// ------ Blog Pages ------ //
+import Blog from "./pages/Blog/index";
+import Blog1 from "./pages/Blog/blog1";
+import Blog2 from "./pages/Blog/blog2";
+import Blog3 from "./pages/Blog/blog3";
+import Blog4 from "./pages/Blog/blog4";
 
 // ---------------------------- Apollo/Graphql Setup ----------------------------- //
 // Middleware - establish a new link to the GraphQL server at its "/graphql" endpoint

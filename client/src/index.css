@@ -6,107 +6,27 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
 section {
   padding: 40px;
   max-width: 1200px;
   margin: auto;
 }
-
 main {
   margin-top: 60px;
   margin-bottom: 60px;
 }
-
 .page {
   min-height: 40vh;
 }
-
 .swiper-button-prev,
 .swiper-button-next {
   color: #2d3748 !important;
 }
-/* ----------- STYLES TO WELCOME MODAL ----------- */
-.welcome-modal {
-  position: fixed;
-  top: 30px;
-  width: 60%;
-  height: 500px;
-  margin-left: 20%;
-
-  background-image: url("./components/assets/welcome-modal.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  border-radius: 20px;
-  box-shadow: 2px 2px 4px rgba(230, 214, 173, 0.357);
-  padding: 20px;
-}
-
-.welcome-modal button {
-  background-color: #eeeeee7d;
-  border: #eeeeeed4;
-  border-radius: 5px;
-  font-size: 30px;
-}
-
-.welcome-modal button:hover {
-  background-color: #dad9d995;
-  cursor: pointer;
-}
-
-.welcome-modal h2 {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-style: italic;
-  font-size: 30px;
-  color: #7f6000;
-  text-align: center;
-}
-
-.welcome-modal p {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  font-size: 20px;
-  color: #657234;
-  width: 60%;
-  margin-left: 20%;
-}
-
-.display-none {
-  display: none;
-}
-
 /* ----------- STYLES TO NAVIGATION BAR ----------- */
-nav {
-  height: 50px;
-  z-index: 10;
-}
-
-/*Styling logo*/
-.logo img {
-  height: 16px;
-  width: 16px;
-  padding-right: 5px;
-}
-
-.logo {
-  top: 15px;
-  position: absolute;
-  left: 10px;
-}
-
-.logo a {
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  font-size: 17px;
-}
 
 /* Dropdown Button */
 .dropbtn {

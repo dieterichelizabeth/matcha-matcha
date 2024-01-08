@@ -1,14 +1,10 @@
-import {
-  Button,
-  Flex,
-  Heading,
-  Image,
-  Stack,
-  Text,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+/**
+ * Homepage "Guides and ResourceS" Section (under "Best Sellers" section)
+ */
+import { Flex, Heading, Image, Stack, Text } from "@chakra-ui/react";
+import { Link as MyLink } from "react-router-dom";
 
-export default function SplitScreen() {
+export default function GuidesAndResources() {
   return (
     <Stack
       height={{ base: "auto", lg: "450px" }}
@@ -28,17 +24,21 @@ export default function SplitScreen() {
             the tools you need to have a flourishing garden or healthy
             houseplant collection.
           </Text>
-          <Text decoration={"underline"} color={"green.800"}>
-            View Plant Care Guides
-          </Text>
-          <Text decoration={"underline"} color={"green.800"}>
-            Contact Us for a Plant Health Consultation
-          </Text>
+          <MyLink to={"/Plant-Care-Guide-for-Beginners"}>
+            <Text decoration={"underline"} color={"green.800"}>
+              View Plant Care Guides
+            </Text>
+          </MyLink>
+          <MyLink to={"/Contact-us"}>
+            <Text decoration={"underline"} color={"green.800"}>
+              Contact Us for a Plant Health Consultation
+            </Text>
+          </MyLink>
         </Stack>
       </Flex>
       <Flex flex={1}>
         <Image
-          alt={"Login Image"}
+          alt={"A plant shop with different green plants sitting on the table."}
           objectFit={"cover"}
           height={"450px"}
           width={"100%"}

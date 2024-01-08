@@ -1,3 +1,7 @@
+/**
+ * Category cards
+ * Used for display on the Homepage, "No results", and Order History pages
+ */
 import React, { useEffect } from "react";
 import {
   SimpleGrid,

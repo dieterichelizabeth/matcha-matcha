@@ -1,5 +1,7 @@
+/**
+ * Handles products for display on the product page
+ */
 import React, { useEffect } from "react";
-import ProductItem from "../ProductItem";
 import ProductCard from "../ProductCard";
 import { useQuery } from "@apollo/client";
 import { QUERY_ALL_PRODUCTS } from "../../utils/queries";

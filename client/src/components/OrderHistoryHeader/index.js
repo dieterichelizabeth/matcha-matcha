@@ -1,13 +1,12 @@
 import {
   Stack,
   Flex,
-  Button,
   Text,
   VStack,
   useBreakpointValue,
 } from "@chakra-ui/react";
 
-export default function Hero3() {
+export default function OrderHistoryHeader() {
   return (
     <Flex
       w={"full"}

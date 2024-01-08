@@ -1,3 +1,7 @@
+/**
+ * Faq component for displaying a fact
+ * @param {fact} arg An object containing a question and answer for display on the "Shop" page
+ */
 import React, { useState } from "react";
 import { Flex, Text, Stack } from "@chakra-ui/react";
 import { GoPlus } from "react-icons/go";

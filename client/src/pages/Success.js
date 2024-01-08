@@ -24,11 +24,6 @@ const Success = () => {
           removeFromLocalCart(item);
         });
       }
-
-      // Redirect to Home after 10 secconds
-      setTimeout(() => {
-        window.location.assign("/");
-      }, 10000);
     }
 
     saveOrder();

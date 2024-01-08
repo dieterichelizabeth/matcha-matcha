@@ -35,13 +35,15 @@ db.once("open", async () => {
     {
       name: "Rubber Fig || Ficus elastica",
       description:
-        "Robust and dramatic, the Rubber Tree sports large, glossy leaves on durable, upright stems. This striking plant is ready to make a statement in your home with its dark, moody color palette ranging from deep forest green to rich red. This low-maintenance plant will be happiest in a spot with bright indirect light.",
+        "The Ficus Elastica is known for its thick, glossy leaves and latex sap that was once used in rubber production! This same sap makes the Ficus elastica toxic, so the best practice is to keep it out of the reach of curious pets and small children. Give your Rubber tree plenty of bright indirect light to help it retain its dramatic foliage.",
       image: "feey-17UXXzGF7RA-unsplash.jpg",
       category: categories[0]._id,
       price: 22.99,
       quantity: 500,
+      details:
+        "Difficulty: Moderate, Light: Partial/Bright Indirect, Air Cleaner",
       ingredients:
-        "Almond Oil, Sulfur, Collagen, Honey, Turmeric, Azelaic Acid, Sea Moss, Glycolic acid, Synthetic Beeswax, Talc, Salicylic Acid, Vitamin E, Vitamin C, Hyaluronic Acid, Vitamin K, Tretinoin, Seaweed, Vitamin F, Mineral Oil, Shea Butter",
+        "Water every 1-2 weeks allowing soil to dry out between waterings. Expect to water more often in brighter light conditions and less often in lower light.",
       benefits:
         "Helps soothe irritated skin. Calms redness and irritation. Restores radiance. Leaves skin feeling refreshed. Reduces fine lines and wrinkles. Contains Vitamin E and Hyaluronic Acid.",
     },

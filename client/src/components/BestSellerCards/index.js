@@ -1,3 +1,6 @@
+/**
+ * Carousel of "Best Selling Plants" - used on the Homepage
+ */
 import React, { useEffect } from "react";
 import ProductCard from "../ProductCard";
 import { useQuery } from "@apollo/client";

@@ -1,3 +1,7 @@
+/**
+ * Single card item for display in the Cart component
+ * @param {item} arg An object containing product data for display
+ */
 import { useDispatch } from "react-redux";
 import { chakra, Flex, Text, Button, Stack, Image } from "@chakra-ui/react";
 import {

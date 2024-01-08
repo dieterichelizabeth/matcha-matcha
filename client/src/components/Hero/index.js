@@ -1,3 +1,6 @@
+/**
+ * Homepage Hero (with large image)
+ */
 import {
   Stack,
   Flex,

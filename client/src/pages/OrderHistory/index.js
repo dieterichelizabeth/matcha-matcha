@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_USER } from "../../utils/queries";
 import Footer from "../../components/Footer";
-import Hero3 from "../../components/Hero3";
+import OrderHistoryHeader from "../../components/OrderHistoryHeader";
 import CategoryCards from "../../components/CategoryCards";
 import {
   Accordion,
@@ -41,7 +41,7 @@ const OrderHistory = () => {
 
   return (
     <div>
-      <Hero3 />
+      <OrderHistoryHeader />
 
       <main>
         <section className="page">
