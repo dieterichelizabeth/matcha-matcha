@@ -67,6 +67,7 @@ export default function WithSubnavigation() {
             <Image
               src={navLogo}
               width={"160px"}
+              height={"47px"}
               alt="Matcha Plant Co. Logo"
               aria-label="Home Button"
             ></Image>

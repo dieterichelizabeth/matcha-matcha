@@ -41,9 +41,7 @@ export default function GuidesAndResources() {
           objectFit={"cover"}
           height={"450px"}
           width={"100%"}
-          src={
-            "https://images.unsplash.com/photo-1601985705806-5b9a71f6004f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D"
-          }
+          src={"/assets/photo-1601985705806-5b9a71f6004f.png"}
         />
       </Flex>
     </Stack>

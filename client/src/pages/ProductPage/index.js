@@ -122,16 +122,15 @@ const Detail = () => {
           py={{ base: 10, md: 16 }}
         >
           {/* Product Images */}
-          <Flex>
+          <Flex justifyContent={"center"}>
             {product.image ? (
               <Image
                 rounded={"md"}
                 alt={"product image"}
-                src={`/assets/${product.image}`}
+                src={`/assets/small/${product.image}`}
                 fit={"cover"}
-                align={"center"}
-                w={"100%"}
-                h={{ base: "100%", sm: "400px", lg: "500px" }}
+                w={"450px"}
+                h={"400px"}
               />
             ) : (
               <></>

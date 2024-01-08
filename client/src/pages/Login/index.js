@@ -105,9 +105,7 @@ export default function Login() {
             objectFit={"cover"}
             maxH={"90vh"}
             width={"100%"}
-            src={
-              "https://images.unsplash.com/photo-1605351720698-6cfec9eb9b5e?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            }
+            src={"/assets/photo-1605351720698-6cfec9eb9b5e.webp"}
           />
         </Flex>
       </Stack>
