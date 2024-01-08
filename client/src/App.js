@@ -20,6 +20,7 @@ import NoMatch from "./pages/NoMatch/index";
 import OrderHistory from "./pages/OrderHistory/index";
 import Signup from "./pages/Signup/index";
 import Success from "./pages/Success";
+import OurStory from "./pages/OurStory";
 
 // ------ Blog Pages ------ //
 import Blog from "./pages/Blog/index";
@@ -87,6 +88,7 @@ function App() {
                 <Route path="/orderHistory" element={<OrderHistory />} />
                 <Route path="/products/:id" element={<ProductPage />} />
                 <Route path="/success" element={<Success />} />
+                <Route path="/our-story" element={<OurStory />} />
                 <Route path="*" element={<NoMatch />} />
               </Routes>
             </div>
