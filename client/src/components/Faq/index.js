@@ -23,11 +23,13 @@ const Faq = ({ fact }) => {
         </Text>
 
         <GoPlus
+          cursor={"pointer"}
           fontSize={"25px"}
           className={isOpen ? "hidden" : "open"}
           onClick={() => setIsOpen(true)}
         />
         <FiMinus
+          cursor={"pointer"}
           fontSize={"25px"}
           className={isOpen ? "open" : "hidden"}
           color="#2F855A"

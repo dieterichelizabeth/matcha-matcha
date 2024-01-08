@@ -1,8 +1,7 @@
 /**
  * Homepage "Guides and ResourceS" Section (under "Best Sellers" section)
  */
-import { Flex, Heading, Image, Stack, Text } from "@chakra-ui/react";
-import { Link as MyLink } from "react-router-dom";
+import { Flex, Heading, Link, Image, Stack, Text } from "@chakra-ui/react";
 
 export default function GuidesAndResources() {
   return (
@@ -19,21 +18,21 @@ export default function GuidesAndResources() {
             <br />
           </Heading>
           <Text fontSize={{ base: "md", lg: "lg" }} color={"green.800"}>
-            Find your plant care essentials at The Sill. Nourish your plants
-            with fertilizer and plant food, potting mixes, and more. Shop all
-            the tools you need to have a flourishing garden or healthy
-            houseplant collection.
+            We have everything you need to keep your plants healthy and happy.
+            From fertilizer and plant food to potting mixes and more, we've got
+            you covered. Shop now and watch your garden or indoor plant
+            collection flourish!
           </Text>
-          <MyLink to={"/Plant-Care-Guide-for-Beginners"}>
+          <Link href={"/Plant-Care-Guide-for-Beginners"}>
             <Text decoration={"underline"} color={"green.800"}>
               View Plant Care Guides
             </Text>
-          </MyLink>
-          <MyLink to={"/Contact-us"}>
+          </Link>
+          <Link href={"/Contact-us"}>
             <Text decoration={"underline"} color={"green.800"}>
               Contact Us for a Plant Health Consultation
             </Text>
-          </MyLink>
+          </Link>
         </Stack>
       </Flex>
       <Flex flex={1}>

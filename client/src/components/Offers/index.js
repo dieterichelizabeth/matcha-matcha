@@ -47,7 +47,7 @@ const Offers = () => {
         }
         title={"Innovative Shipping"}
         text={
-          "Our unique packaging technology — made mostly from recycled and/or biodegradable materials — holds your plant securely in place so it arrives safely and without the mess."
+          " With our innovative packaging technology, we can guarantee that your plant will arrive safely and without any mess. We use recycled and/or biodegradable materials so you can feel good about your purchase."
         }
       />
       <Feature
@@ -63,7 +63,7 @@ const Offers = () => {
         }
         title={"Quality Plants Guaranteed"}
         text={
-          "From our tabletop collections to our XL  Money Trees, our fully-grown and potted indoor plants come with a 30-day guarantee."
+          "We take pride in providing high-quality, fully-grown indoor plants that come with a 30-day guarantee. You can trust that each plant we send out is carefully chosen and handled with care."
         }
       />
       <Feature
@@ -79,7 +79,7 @@ const Offers = () => {
         }
         title={"Plenty of Guidance"}
         text={
-          "From detailed care instructions to real-time support, we’re here to make plants easy. Chat with our plant care experts on the Grow-How® Team for help."
+          "Our Matcha-grow® Team is always available to chat with you and answer any questions you may have. We'll provide you with detailed care instructions and offer real-time support to make sure your plant thrives."
         }
       />
     </SimpleGrid>

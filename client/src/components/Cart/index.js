@@ -127,9 +127,9 @@ const Cart = () => {
         fontSize={"sm"}
         fontWeight={600}
         color={"green.800"}
-        bg={"transparent"}
+        bg={"gray.100"}
         _hover={{
-          bg: "gray.50",
+          bg: "gray.200",
         }}
         onClick={toggleCart}
         aria-label="Open The Cart"
