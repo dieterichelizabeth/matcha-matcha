@@ -205,7 +205,7 @@ const Detail = () => {
                 </Text>
 
                 <Text fontSize={"lg"} color={"gray.600"}>
-                  {product.benefits}
+                  {product.care}
                 </Text>
               </Box>
             </Stack>
